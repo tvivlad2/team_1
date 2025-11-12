@@ -224,4 +224,67 @@ h6 {
 
 .btn-secondary:hover {
   background-color: var(--color-dark-gray);
+
+}
+
+.feedback{
+    padding: 70px 0;
+    background: white;
+}
+.feedback .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+.info {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background: #592ea9;
+    padding: 40px;
+    border-radius: 5px;
+    color: white;
+    max-width: 600px;
+    width: 100%;
+}
+.info-divider{
+    height: 1px;
+    background: #f4f0f8;
+    margin-bottom: 30px;
+}
+.info-column {
+    flex: 1;
+}
+.info-item {
+    margin-bottom: 20px;
+}
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
