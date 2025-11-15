@@ -122,6 +122,12 @@ h6 {
   line-height: 24px;
 }
 
+.purple-header {
+  background-color: var(--color-light-purple);
+  padding: 60px 20px;
+  text-align: center;
+}
+
 .body-01 {
   font-family: var(--font-family);
   font-weight: 400;
