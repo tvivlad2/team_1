@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .purple-header {
+            position: relative;
+            padding-bottom: 0;
+        }
+
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+        }
+
+        .author-image {
+            flex-shrink: 0;
+        }
+
+        .author-image img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            background: white;
+            padding: 20px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-info h1 {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .author-info p {
+            color: var(--color-dark-gray);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--color-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-links a img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+
+        @media (max-width: 768px) {
+            .author-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-image img {
+                width: 500px;
+                height: 500px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="purple-header">
+        <div class="author-section">
+            <div class="author-image">
+                <img src="img/author/author.jpg" alt="Author">
+            </div>
+            <div class="author-info">
+                <h1>Hey there, I'm Andrew Jonhson and welcome to my Blog</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nostrum modi ullam perspiciatis, rem maiores, veritatis dolores consectetur itaque fuga, autem ipsa nulla accusamus qui facilis provident quis voluptatem! Dolor.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Rutube">
+                        <img src="img/logos/rutube.svg" alt="Rutube">
+                    </a>
+                    <a href="#" aria-label="VK">
+                        <img src="img/logos/vk.svg" alt="VK">
+                    </a>
+                    <a href="#" aria-label="ICQ">
+                        <img src="img/logos/icq.svg" alt="ICQ">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="divider-bars">
+            <div class="divider-yellow"></div>
+            <div class="divider-purple"></div>
+        </div>
+    </div>
+
+    <div class="posts-section">
+        <h2>My Posts</h2>
+
+        <div class="posts-grid">
+            <div class="post-card">
+                <div class="post-image">
+                    <img src="img/author/campus.webp" alt="campus.webp">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">BUSINESS</div>
+                    <h3>Font sizes in UI design: The complete guide to follow</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vitae optio recusandae cum in corrupti possimus vero deserunt sit, necessitatibus neque adipisci dolor maxime, voluptate non, facere alias veritatis hic veniam! Inventore, eius. Iure quidem deserunt magni tempora, molestias quis itaque vero nemo aspernatur similique, consequatur quia? Autem, quis aliquid?</p>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">
+                    <img src="img/author/economy.webp" alt="economy.webp">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">ECONOMY</div>
+                    <h3>How to build rapport with your web design clients</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus amet maiores culpa quia sunt sequi facere animi. Ratione doloribus error adipisci nam corrupti aspernatur dignissimos, quia quas eveniet rem, modi sequi laboriosam unde quos tempora animi vitae corporis! Aliquam iusto optio eaque voluptatem delectus at illo eum, dolorum provident doloribus sit, consequuntur quae esse id. Consequuntur inventore hic magni!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
