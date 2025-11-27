@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header {
+            background-color: #000000;
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header p {
+            margin: 0;
+            color: #e77575;
+            font-size: 30px;
+        }
+
+        .featured-section {
+            padding: 80px 20px;
+        }
+        
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .featured-content {
+            display: flex;
+            gap: 10em;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .featured-text {
+            flex: 1;
+            max-width: 700px;
+        }
+        
+        .featured-image {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .featured-image img {
+            width: 90%;
+            height: 20em;
+            object-fit: cover;
+        }
+
+        .post-content h3 {
+            margin-bottom: 12px;
+            max-width: 85%; 
+        }
+
+        .categories-section {
+            padding: 20px 20px;
+            background-color: white;
+        }
+        
+        .categories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+        }
+        
+        .category-card.active {
+            background-color: var(--color-accent);
+            border: none;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-light-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .category-card.active .category-icon {
+            background-color: white;
+        }
+        
+        .join-section {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .join-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pagination {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .pagination a {
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .header p {
+                font-size: 18px;
+            }
+
+            .featured-section {
+                padding: 40px 20px;
+            }
+            
+            .featured-content {
+                gap: 30px; 
+                flex-direction: column; 
+            }
+            
+            .featured-text {
+                max-width: 100%; 
+            }
+            
+            .featured-text .btn {
+                    width: 100%;
+                    display: block; 
+                    text-align: center;
+                }
+
+            .featured-text h3 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+            
+            .featured-image {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .featured-image img {
+                width: 100%; 
+                height: 250px;
+            }
+            
+            .categories-section,
+            .join-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>здесь могла быть ваша реклама, НО святослав дятлов (@JouGost) так и не сделал header-navbar (даже к репозиторию не подключился)</p>
+    </div>
+    <!-- Featured Post -->
+    <section class="featured-section bg-light-purple">
+        <div class="featured-container">
+            <p class="label text-primary" style="letter-spacing: 2px; margin-bottom: 0.5em;">FEATURED POST</p>
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h3 class="heading-h3" style="margin-bottom: 16px;">Step-by-step guide to choosing great font pairs</h3>
+                    <p class="body-02 text-dark-gray" style="margin-bottom: 24px;">By <span style="color: var(--color-purple);">John Doe</span> | May 23, 2022</p>
+                    <p class="body-01 text-dark-gray" style="margin-bottom: 24px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <a href="#" class="btn btn-primary">Read More ></a>
+                </div>
+                <div class="featured-image">
+                    <img src="img/blog/office-guy.jpeg" alt="Featured post">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Posts -->
+    <section class="posts-section">
+        <h2 class="heading-h2">All posts</h2> <hr>
+        <div class="posts-grid">
+            <!-- post 1 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/blog/design-tips.webp" alt="Design tips">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">STARTUP</div>
+                    <h3>Design tips for designers that cover everything you need</h3>
+                    <span class="body-01 text-medium-gray">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span>
+                </div>
+            </article>
+
+            <!-- post 2 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/blog/business-rapport.jpg" alt="Business rapport">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">BUSINESS</div>
+                    <h3>How to build rapport with your web design clients</h3>
+                    <span class="body-01 text-medium-gray">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span>
+                </div>
+            </article>
+
+            <!-- post 3 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/blog/startup.jpg" alt="Logo design trends">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">STARTUP</div>
+                    <h3>Logo design trends to avoid in 2022</h3>
+                    <span class="body-01 text-medium-gray">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span>
+                </div>
+            </article>
+
+            <!-- post 4 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/blog/figma.webp" alt="Figma design systems">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">TECHNOLOGY</div>
+                    <h3>8 Figma design systems you can download for free today</h3>
+                    <span class="body-01 text-medium-gray">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span>
+                </div>
+            </article>
+
+            <!-- post 5 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/blog/economy.jpg" alt="Font sizes">
+                </div>
+                <div class="post-content">
+                    <div class="post-category">ECONOMY</div>
+                    <h3>Font sizes in UI design: The complete guide to follow</h3>
+                    <span class="body-01 text-medium-gray">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="heading-h4 text-dark-gray">< Prev</a>
+            <a href="#" class="heading-h3 text-primary">Next ></a>
+        </div>
+    </section>
+
+    <!-- Categories section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <h3 class="heading-h2" style="margin-bottom: 40px;">All Categories</h3>
+            <div class="categories-grid">
+                <!-- Business category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 48H9C4.029 48 0 43.971 0 39V9C0 4.029 4.029 0 9 0H39C43.971 0 48 4.029 48 9V39C48 43.971 43.971 48 39 48Z" fill="#FBF6EA"/>
+                            <path d="M25.0305 13.914L14.04 12.2445C13.53 12.165 13.0095 12.3045 12.6195 12.6345C12.2295 12.975 12 13.464 12 13.974V35.0445C12 35.595 12.45 36.045 13.0005 36.045H16.251V30.795C16.251 29.8245 17.031 29.0445 18.0015 29.0445H20.502C21.4725 29.0445 22.2525 29.8245 22.2525 30.795V36.045H26.502V15.645C26.5005 14.784 25.8795 14.055 25.0305 13.914ZM17.5005 26.7945H16.0005C15.5865 26.7945 15.2505 26.4585 15.2505 26.0445C15.2505 25.6305 15.5865 25.2945 16.0005 25.2945H17.5005C17.9145 25.2945 18.2505 25.6305 18.2505 26.0445C18.2505 26.4585 17.9145 26.7945 17.5005 26.7945ZM17.5005 23.7945H16.0005C15.5865 23.7945 15.2505 23.4585 15.2505 23.0445C15.2505 22.6305 15.5865 22.2945 16.0005 22.2945H17.5005C17.9145 22.2945 18.2505 22.6305 18.2505 23.0445C18.2505 23.4585 17.9145 23.7945 17.5005 23.7945ZM17.5005 20.7945H16.0005C15.5865 20.7945 15.2505 20.4585 15.2505 20.0445C15.2505 19.6305 15.5865 19.2945 16.0005 19.2945H17.5005C17.9145 19.2945 18.2505 19.6305 18.2505 20.0445C18.2505 20.4585 17.9145 20.7945 17.5005 20.7945ZM17.5005 17.7945H16.0005C15.5865 17.7945 15.2505 17.4585 15.2505 17.0445C15.2505 16.6305 15.5865 16.2945 16.0005 16.2945H17.5005C17.9145 16.2945 18.2505 16.6305 18.2505 17.0445C18.2505 17.4585 17.9145 17.7945 17.5005 17.7945ZM22.5 26.7945H21C20.586 26.7945 20.25 26.4585 20.25 26.0445C20.25 25.6305 20.586 25.2945 21 25.2945H22.5C22.914 25.2945 23.25 25.6305 23.25 26.0445C23.25 26.4585 22.914 26.7945 22.5 26.7945ZM22.5 23.7945H21C20.586 23.7945 20.25 23.4585 20.25 23.0445C20.25 22.6305 20.586 22.2945 21 22.2945H22.5C22.914 22.2945 23.25 22.6305 23.25 23.0445C23.25 23.4585 22.914 23.7945 22.5 23.7945ZM22.5 20.7945H21C20.586 20.7945 20.25 20.4585 20.25 20.0445C20.25 19.6305 20.586 19.2945 21 19.2945H22.5C22.914 19.2945 23.25 19.6305 23.25 20.0445C23.25 20.4585 22.914 20.7945 22.5 20.7945ZM22.5 17.7945H21C20.586 17.7945 20.25 17.4585 20.25 17.0445C20.25 16.6305 20.586 16.2945 21 16.2945H22.5C22.914 16.2945 23.25 16.6305 23.25 17.0445C23.25 17.4585 22.914 17.7945 22.5 17.7945Z" fill="#232536"/>
+                            <path d="M34.6205 22.887L27.5 21.396V36.045H34.25C35.2145 36.045 36.0005 35.2605 36.0005 34.2945V24.597C36.0005 23.7705 35.4365 23.067 34.6205 22.887ZM32.2505 33.045H30.7505C30.3365 33.045 30.0005 32.709 30.0005 32.295C30.0005 31.881 30.3365 31.545 30.7505 31.545H32.2505C32.6645 31.545 33.0005 31.881 33.0005 32.295C33.0005 32.709 32.6645 33.045 32.2505 33.045ZM32.2505 30.045H30.7505C30.3365 30.045 30.0005 29.709 30.0005 29.295C30.0005 28.881 30.3365 28.545 30.7505 28.545H32.2505C32.6645 28.545 33.0005 28.881 33.0005 29.295C33.0005 29.709 32.6645 30.045 32.2505 30.045ZM32.2505 27.045H30.7505C30.3365 27.045 30.0005 26.709 30.0005 26.295C30.0005 25.881 30.3365 25.545 30.7505 25.545H32.2505C32.6645 25.545 33.0005 25.881 33.0005 26.295C33.0005 26.709 32.6645 27.045 32.2505 27.045Z" fill="#FFD050"/>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Business</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, alias!</p>
+                </div>
+
+                <!-- Startup category -->
+                <div class="category-card active">
+                    <div class="category-icon">
+                        <!-- rocket-->
+                       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39 48H9C4.029 48 0 43.971 0 39V9C0 4.029 4.029 0 9 0H39C43.971 0 48 4.029 48 9V39C48 43.971 43.971 48 39 48Z" fill="#FBF6EA"/>
+                        <g clip-path="url(#clip0_27_387)">
+                        <path d="M17.8505 18.2114L15.8579 18.3654C15.3034 18.4082 14.8096 18.6988 14.503 19.1626L12.2049 22.6383C11.9724 22.99 11.9354 23.4302 12.106 23.8158C12.2766 24.2014 12.6272 24.4702 13.0439 24.5347L14.8683 24.8173C15.2951 22.5523 16.3168 20.293 17.8505 18.2114Z" fill="#FFD050"/>
+                        <path d="M22.1836 32.1316L22.4662 33.9561C22.5307 34.3728 22.7995 34.7234 23.185 34.8939C23.3454 34.9649 23.5152 34.9999 23.6842 34.9999C23.9215 34.9999 24.1572 34.9308 24.3626 34.795L27.8384 32.497C28.3022 32.1903 28.5928 31.6964 28.6355 31.142L28.7895 29.1494C26.7079 30.6832 24.4486 31.7049 22.1836 32.1316Z" fill="#FFD050"/>
+                        <path d="M21.4966 30.8665C21.5599 30.8665 21.6236 30.8613 21.6872 30.8507C22.6361 30.6921 23.5507 30.4248 24.4232 30.0749L16.9244 22.5762C16.5746 23.4486 16.3073 24.3632 16.1486 25.3122C16.0861 25.6862 16.2116 26.0673 16.4797 26.3355L20.6639 30.5196C20.8865 30.7422 21.187 30.8665 21.4966 30.8665Z" fill="#FFD050"/>
+                        <path d="M33.1661 22.1973C35.0011 18.6497 35.069 14.9007 34.9731 13.1425C34.9403 12.54 34.46 12.0597 33.8575 12.0269C33.5712 12.0113 33.2319 12 32.8495 12C30.8835 12 27.7726 12.2978 24.8027 13.834C22.4424 15.0548 19.3475 17.7429 17.5215 21.2757C17.543 21.2925 17.5641 21.3104 17.584 21.3302L25.6698 29.4161C25.6897 29.436 25.7075 29.457 25.7244 29.4786C29.2571 27.6525 31.9453 24.5576 33.1661 22.1973ZM25.3731 16.8623C26.6866 15.5488 28.8241 15.5486 30.1377 16.8623C30.7741 17.4986 31.1245 18.3447 31.1245 19.2446C31.1245 20.1445 30.7741 20.9906 30.1377 21.627C29.481 22.2837 28.618 22.6121 27.7554 22.6122C26.8925 22.6122 26.03 22.2838 25.3731 21.627C24.7367 20.9906 24.3863 20.1445 24.3863 19.2446C24.3863 18.3447 24.7367 17.4986 25.3731 16.8623Z" fill="#232536"/>
+                        <path d="M26.3264 20.674C27.1146 21.4622 28.3971 21.4622 29.1853 20.674C29.5671 20.2922 29.7773 19.7846 29.7773 19.2446C29.7773 18.7047 29.5671 18.197 29.1853 17.8152C28.7912 17.4211 28.2735 17.2241 27.7559 17.2241C27.2382 17.2241 26.7205 17.4211 26.3265 17.8152C25.9447 18.197 25.7344 18.7047 25.7344 19.2446C25.7344 19.7846 25.9447 20.2922 26.3264 20.674Z" fill="#232536"/>
+                        <path d="M12.6875 30.9539C12.86 30.9539 13.0324 30.8881 13.164 30.7565L15.3639 28.5565C15.6271 28.2934 15.6271 27.8668 15.3639 27.6036C15.1008 27.3405 14.6741 27.3405 14.411 27.6036L12.211 29.8036C11.9479 30.0667 11.9479 30.4934 12.211 30.7565C12.3426 30.8881 12.5151 30.9539 12.6875 30.9539Z" fill="#FFD050"/>
+                        <path d="M17.3799 29.6202C17.1168 29.3571 16.6901 29.3571 16.427 29.6202L12.1974 33.8498C11.9342 34.113 11.9342 34.5396 12.1974 34.8028C12.3289 34.9343 12.5014 35.0001 12.6739 35.0001C12.8463 35.0001 13.0188 34.9343 13.1503 34.8027L17.3799 30.5731C17.6431 30.31 17.6431 29.8834 17.3799 29.6202Z" fill="#FFD050"/>
+                        <path d="M18.4422 31.6358L16.2423 33.8358C15.9791 34.099 15.9791 34.5256 16.2423 34.7887C16.3739 34.9203 16.5463 34.9861 16.7187 34.9861C16.8911 34.9861 17.0636 34.9203 17.1952 34.7887L19.3951 32.5888C19.6583 32.3256 19.6583 31.899 19.3951 31.6358C19.132 31.3727 18.7054 31.3727 18.4422 31.6358Z" fill="#FFD050"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_27_387">
+                        <rect width="23" height="23" fill="white" transform="translate(12 12)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Startup</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, ex.</p>
+                </div>
+
+                <!-- Economy category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <!-- economy -->
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 49H9C4.029 49 0 44.971 0 40V10C0 5.029 4.029 1 9 1H39C43.971 1 48 5.029 48 10V40C48 44.971 43.971 49 39 49Z" fill="#FBF6EA"/>
+                            <g clip-path="url(#clip0_27_387)">
+                            <path d="M18.1156 27.4253H15.5317C14.5999 27.4253 13.8418 28.2179 13.8418 29.192V34.915C13.8418 35.5133 14.3074 36 14.8796 36H18.7676C19.3398 36 19.8054 35.5133 19.8054 34.915V29.1921C19.8054 28.2179 19.0474 27.4253 18.1156 27.4253Z" fill="#232536"/>
+                            <path d="M25.6996 23.9492H23.1157C22.1839 23.9492 21.4258 24.7418 21.4258 25.7159V34.9148C21.4258 35.5131 21.8914 35.9998 22.4636 35.9998H26.3516C26.9239 35.9998 27.3894 35.5131 27.3894 34.9148V25.7159C27.3894 24.7417 26.6314 23.9492 25.6996 23.9492Z" fill="#232536"/>
+                            <path d="M33.4261 19.9888H30.8423C29.9104 19.9888 29.1523 20.7813 29.1523 21.7554V34.9148C29.1523 35.5131 29.6179 35.9998 30.1901 35.9998H34.0781C34.6504 35.9998 35.1159 35.5131 35.1159 34.9148V21.7554C35.116 20.7813 34.3579 19.9888 33.4261 19.9888Z" fill="#232536"/>
+                            <path d="M31.3681 12.6682C31.052 12.2011 30.538 11.9541 29.9929 12.0064L25.1128 12.4785C24.5678 12.5312 24.1059 12.8729 23.8771 13.3926C23.6483 13.9123 23.7004 14.5015 24.0165 14.9686L24.2889 15.371L18.2318 19.7468L18.2256 19.7513C17.7958 20.0693 17.5102 20.5432 17.4213 21.0858C17.3325 21.6284 17.4511 22.1746 17.7552 22.624C18.0593 23.0733 18.5127 23.3719 19.0317 23.4648C19.1441 23.4849 19.2567 23.4949 19.3685 23.4949C19.7713 23.4949 20.1637 23.3657 20.4996 23.1184L26.5664 18.7357L26.8476 19.1511C27.1357 19.5767 27.588 19.8198 28.0783 19.8198C28.1261 19.8198 28.1743 19.8175 28.2228 19.8128C28.7677 19.7601 29.2297 19.4183 29.4585 18.8986L31.5076 14.2441C31.7364 13.7243 31.6843 13.1352 31.3681 12.6682Z" fill="#FFD050"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_27_387">
+                            <rect width="22.9565" height="24" fill="white" transform="translate(13 12)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Economy</h5>
+                    <p class="body-02 text-dark-gray"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+
+                <!-- Technology category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <!-- technology-head -->
+                        <svg width="48" height="50" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 50H9C4.029 50 0 45.971 0 41V11C0 6.029 4.029 2 9 2H39C43.971 2 48 6.029 48 11V41C48 45.971 43.971 50 39 50Z" fill="#FBF6EA"/>
+                            <g clip-path="url(#clip0_27_387)">
+                            <path d="M27.5176 19.0312C27.5176 19.8065 28.1486 20.4375 28.9238 20.4375H33.1042C33.0283 19.4479 32.7988 18.5021 32.4316 17.625H28.9238C28.1486 17.625 27.5176 18.256 27.5176 19.0312Z" fill="#232536"/>
+                            <path d="M18.377 36H26.8145C27.2031 36 27.5176 35.6855 27.5176 35.2969V31.6875H28.9238V27.1172L21.893 21.8438H15.5645C15.1758 21.8438 14.8613 22.1582 14.8613 22.5469C14.8613 25.0373 15.8824 27.4228 17.6738 29.1428V35.2969C17.6738 35.6855 17.9883 36 18.377 36Z" fill="#FFD050"/>
+                            <path d="M24.002 12C23.6133 12 23.2988 12.3145 23.2988 12.7031V13.4062H20.3568C20.0656 12.5896 19.2924 12 18.377 12C17.2138 12 16.2676 12.9462 16.2676 14.1094C16.2676 15.2725 17.2138 16.2188 18.377 16.2188C19.2924 16.2188 20.0656 15.6292 20.3568 14.8125H23.2988V17.625H16.1381C15.8468 16.8083 15.0737 16.2188 14.1582 16.2188C12.995 16.2188 12.002 17.165 12.002 18.3281C12.002 19.4913 12.995 20.4375 14.1582 20.4375C15.0737 20.4375 15.8468 19.8479 16.1381 19.0312H23.2988V21.141L30.0485 26.2033C30.2257 26.3358 30.3301 26.5445 30.3301 26.7656V31.6875H31.0332C32.1964 31.6875 33.1426 30.7413 33.1426 29.5781V26.0625H35.2988C35.5584 26.0625 35.7966 25.9197 35.9189 25.691C36.0411 25.4624 36.0274 25.185 35.8839 24.9693L33.7533 21.8438H28.9238C27.3727 21.8438 26.1113 20.5824 26.1113 19.0312C26.1113 17.4801 27.3727 16.2188 28.9238 16.2188H31.6897C30.0628 13.6865 27.2291 12 24.002 12V12Z" fill="#232536"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_27_387">
+                            <rect width="24" height="24" fill="white" transform="translate(12 12)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h5" style="margin-bottom: 8px;">Technology</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join team  -->
+    <section class="join-section">
+        <div class="join-container">
+            <h2 class="heading-h2" style="margin-bottom: 16px;">Join our team to be a part<br>of our story</h2>
+            <p class="body-01 text-dark-gray" style="margin-bottom: 32px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn btn-primary">Join Now</a>
+        </div>
+    </section>
+</body>
+</html>
