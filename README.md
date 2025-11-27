@@ -32,9 +32,9 @@ team_1/
 │ │   ├── office-guy.jpeg  
 │ │   └── startup.jpg    
 │ │     
-│ ├── icons/  
-│ ├── logos/ 
-│ │   ├── icq.svg  
+│ ├── icons/   
+│ ├── logos/   
+│ │   ├── icq.svg    
 │ │   ├── rutube.svg  
 │ └   └──vk.svg  
 ├── fonts/ # шрифты (Sen)   
