@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finsweet Footer</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    /*
+      ==================== АДАПТИРОВАННЫЕ СТИЛИ ФУТЕРА ====================
+    */
+
+    /* Базовый стиль тела документа (использует переменные из styles.css) */
+    body {
+      color: var(--color-primary); 
+      background: #fff;
+    }
+
+    /* Адаптация класса кнопки из styles.css */
+    .btn {
+      border-radius: 0; 
+    }
+
+    /* ==================== FOOTER SPECIFIC STYLES / СПЕЦИФИЧНЫЕ СТИЛИ ФУТЕРА ==================== */
+    .footer {
+      background: var(--color-primary); /* #232536 - Темный фон */
+      color: var(--color-light-gray);   /* Текст светлый */
+      padding: 60px 80px 40px;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      font-weight: 700; 
+      font-size: 28px;
+      color: #FFF;
+      text-decoration: none;
+    }
+    .footer-logo span { color: inherit; } /* Скобка белая */
+
+    .footer-nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .footer-nav a {
+      color: var(--color-light-gray); /* Ссылки светлые */
+      text-decoration: none;
+      font-weight: 500; 
+      transition: color .2s;
+    }
+    .footer-nav a:hover {
+      color: var(--color-accent); 
+    }
+
+    .subscribe-box {
+      background: #2e303f; /* Фон блока подписки */
+      padding: 70px 80px;
+      width: 100%;
+    }
+    .subscribe-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .subscribe-title {
+      /* Использует класс heading-h4 из styles.css для типографики */
+      color: #FFF;
+      line-height: 1.4;
+      margin: 0;
+      flex: 1;
+      min-width: 300px;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .subscribe-input {
+      background: #2e303f; /* Фон поля ввода */
+      border: 1px solid rgba(109, 110, 118, 0.7); 
+      padding: 16px 18px;
+      color: #FFF; 
+      font-size: 16px; 
+      outline: none;
+      min-width: 260px;
+    }
+    .subscribe-input::placeholder {
+      color: #6D6E76; 
+      opacity: 0.7; 
+    }
+    :-ms-input-placeholder {
+        color: #6D6E76;
+        opacity: 0.7;
+    }
+    ::-ms-input-placeholder {
+        color: #6D6E76;
+        opacity: 0.7;
+    }
+
+    .subscribe-btn {
+      /* Использует классы btn и btn-primary из styles.css */
+      padding: 16px 60px;
+      min-width: 180px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 40px;
+      /* Линия-разделитель удалена */
+      font-size: 14px; 
+      color: #94A3B8;
+    }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+    .social-links a {
+      color: #94A3B8;
+      font-size: 14px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: rgba(148,163,184,0.1);
+      transition: all .2s;
+    }
+    .social-links a:hover {
+      color: var(--color-accent); 
+      background: rgba(255,208,80,0.2);
+    }
+
+    /* ==================== АДАПТИВ ==================== */
+    @media (max-width: 992px) {
+      .footer { padding: 48px 40px 32px; }
+      .footer-top { flex-direction: column; align-items: center; text-align: center; }
+      .footer-nav { justify-content: center; }
+      .subscribe-box { padding: 50px 40px; }
+    }
+    @media (max-width: 768px) {
+      .footer { padding: 40px 24px 32px; }
+      .subscribe-inner { flex-direction: column; align-items: flex-start; text-align: left; }
+      .subscribe-form { width: 100%; gap: 16px; }
+      .subscribe-input, .subscribe-btn { width: 100%; }
+      .subscribe-box { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-top">
+        <a href="#" class="footer-logo"><span>{</span>Finsweet</a>
+
+        <ul class="footer-nav body-01"> <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+
+        <div class="subscribe-box">
+          <div class="subscribe-inner">
+            <h3 class="subscribe-title heading-h4">
+              Subscribe to our news letter to get latest updates and news
+            </h3>
+
+            <form class="subscribe-form">
+              <input type="email" placeholder="Enter Your Email" class="subscribe-input" />
+              <button type="submit" class="btn btn-primary subscribe-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-contact body-02">
+          <div>Finstreet 118 2561 Fintown</div>
+          <div>Hello@finsweet.com  020 7993 2905</div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
