@@ -26,7 +26,7 @@
 
         .author-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start; 
             gap: 60px;
             max-width: 1200px;
             margin: 0 auto;
@@ -35,14 +35,16 @@
 
         .author-image {
             flex-shrink: 0;
+            min-width: 280px; 
         }
 
-        .author-image img {
+       .author-image img {
             width: 280px;
             height: 280px;
             object-fit: cover;
             background: white;
             padding: 20px;
+            display: block; /* добавьте эту строку */
         }
 
         .author-info {
