@@ -30,6 +30,7 @@
   --color-primary: #232536;
   --color-accent: #FFD050;
   --color-purple: #592EA9;
+  --color-medium-gray: #6D6E76;
   --color-dark-gray: #4C4C4C;
   --color-light-gray: #F4F4F4;
   --color-light-purple: #F4F0F8;
@@ -64,6 +65,25 @@ body {
 }
 
 /* MAIN CLASSES // ОСНОВНЫЕ КЛАССЫ */
+
+/* Dividers / Разделители */
+.divider-bars {
+  display: flex;
+  height: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.divider-yellow {
+  flex: 3;
+  background-color: var(--color-accent);
+}
+
+.divider-purple {
+  flex: 1;
+  background-color: var(--color-purple);
+}
 
 /* Display */
 .display {
@@ -122,17 +142,12 @@ h6 {
   line-height: 24px;
 }
 
-.purple-header {
-  background-color: var(--color-light-purple);
-  padding: 60px 20px;
-  text-align: center;
-}
-
 .body-01 {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
+  margin-bottom: 10px;
 }
 
 .body-02 {
@@ -147,6 +162,12 @@ h6 {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+}
+
+.purple-header {
+  background-color: var(--color-light-purple);
+  padding: 60px 20px;
+  text-align: center;
 }
 
 /* COLOR CLASSES / КЛАССЫ ЦВЕТОВ (ДОПОЛНИТЕЛЬНЫЕ) */
@@ -190,6 +211,10 @@ h6 {
   color: var(--color-purple);
 }
 
+.text-medium-gray {
+  color: var(--color-medium-gray);
+}
+
 .text-dark-gray {
   color: var(--color-dark-gray);
 }
@@ -229,144 +254,212 @@ h6 {
 
 .btn-secondary:hover {
   background-color: var(--color-dark-gray);
-
 }
 
-.about-container{
-    margin:0 auto;
-    text-align: center;
-    padding-top: 128px;
-    max-width: 768px;
-    width: 100%;
-    height: 176px;
-}
-.about-container h1{
-    line-height: 24px;
-}
-.about-container h3{
-    line-height: 12px;
+/* ABOUT SECTION / О НАС */
+.about-container {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 128px;
+  max-width: 768px;
+  width: 100%;
+  height: 176px;
 }
 
-.about-container p{
-    color: var(--color-light-gray);
+.about-container h1 {
+  line-height: 24px;
 }
 
-.feedback{
-    margin: auto;
-    width: 768px;
-    height: 500px;
-    padding: 70px 0;
-    background: white;
-    border: 1px;
+.about-container h3 {
+  line-height: 12px;
 }
+
+.about-container p {
+  color: var(--color-light-gray);
+}
+
+/* FEEDBACK SECTION / ФОРМА ОБРАТНОЙ СВЯЗИ */
+.feedback {
+  padding: 70px 0;
+  background: white;
+}
+
 .feedback .container {
-    width: 768px;
-    height: 76px;
-    margin: 0 auto;
-    border: 1px;
-    border-radius: 2px;
-    gap: 10px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .feedback form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .feedback form input,
 .feedback form textarea {
-    background: white;
-    border: 1px solid #ddd;
-    width: 100%;
-    padding: 15px;
-    outline: none;
-    font-family: var(--font-family);
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    box-sizing: border-box;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 15px;
+  outline: none;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
+
 .feedback form button {
-    background: var(--color-light-yellow); 
-    color: #333; 
-    border: none;
-    padding: 0; 
-    font-family: var(--font-family);
-    font-size: 16px;
-    font-weight: 600; 
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%; 
-    height: 64px; 
-    letter-spacing: 0.5px; 
+  background: var(--color-light-yellow); 
+  color: #333; 
+  border: none;
+  padding: 0; 
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%; 
+  height: 64px; 
+  letter-spacing: 0.5px; 
 }
 
 .feedback form button:active {
-    background: #FFB300; 
+  background: #FFB300; 
 }
+
 .query-group {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .query-group input {
-    padding-right: 50px; 
-    cursor: pointer;
+  padding-right: 50px; 
+  cursor: pointer;
 }
 
 .query-group::after {
-    content: '⌵';
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    color: #333;
-    font-size: 12px;
-    pointer-events: none;
+  content: '⌵';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: #333;
+  font-size: 12px;
+  pointer-events: none;
 }
 
+/* INFO SECTION / ИНФОРМАЦИОННЫЙ БЛОК */
 .info {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-purple);
-    color: white;
-    max-width: 768px;
-    height: 176px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-purple);
+  padding: 40px;
+  border-radius: 5px;
+  color: white;
+  max-width: 768px;
+  width: 100%;
+  height: 176px;
 }
-.info-divider{
-    width: 294px;
-    height: 1px;
-    background: white;
-    border: 1px;
-    opacity: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
 
+.info-divider {
+  width: 294px;
+  height: 1px;
+  background: white;
+  border: 1px;
+  opacity: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.body-01{
-    margin-bottom: 10px;
+
+.social {
+  opacity: 60%;
 }
-.social{
-    opacity: 60%;
-}
+
 .info-column {
-    max-width: 294px;
-    height: 144px;
-    gap: 42px;
-    text-align: justify;
-}
-.info-item {
-    margin-bottom: 10px;
-}
-.info-block {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+  max-width: 294px;
+  height: 144px;
+  gap: 42px;
+  text-align: justify;
 }
 
-/* Authors Section */
+.info-item {
+  margin-bottom: 20px;
+}
+
+.info-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* POSTS SECTION / РАЗДЕЛ ПОСТОВ */
+.posts-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.posts-section hr {
+  border: none;
+  border-top: 1px solid var(--color-light-gray, #e0e0e0);
+  margin: 20px 0 60px 0;
+}
+
+.posts-section h2 {
+  margin-bottom: 30px;
+}
+
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.post-card {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.post-image {
+  flex-shrink: 0;
+  width: 350px;
+}
+
+.post-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.post-content {
+  flex: 1;
+  margin-top: -2em;
+}
+
+.post-category {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-purple);
+  margin-bottom: 12px;
+}
+
+.post-content h3 {
+  margin-bottom: 12px;
+}
+
+.post-content p {
+  color: var(--color-dark-gray);
+  line-height: 1.6;
+}
+
+/* AUTHORS SECTION / РАЗДЕЛ АВТОРОВ */
 .authors-section {
   padding: 96px 32px;
   background-color: #fff;
@@ -419,11 +512,12 @@ h6 {
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
 .social-icon:hover svg {
   opacity: 1;
 }
 
-/* Join Section */
+/* JOIN SECTION / РАЗДЕЛ ПРИСОЕДИНИТЬСЯ */
 .join-section {
   padding: 96px 32px;
   text-align: center;
@@ -441,19 +535,87 @@ h6 {
   color: var(--color-dark-gray);
 }
 
-/* Адаптив */
+/* ADAPTIVE / АДАПТИВНАЯ ВЁРСТКА */
+
+/* Posts Section Responsive */
+@media (max-width: 768px) {
+  .posts-section {
+    padding: 40px 20px;
+  }
+
+  .posts-section h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .posts-grid {
+    gap: 30px;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .post-image {
+    width: 100%;
+  }
+
+  .post-image img {
+    height: 200px;
+  }
+
+  .post-content h3 {
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* Authors Section Responsive */
 @media (max-width: 1280px) {
-  .authors-grid { grid-template-columns: repeat(3, 1fr); }
+  .authors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 991px) {
-  .authors-section, .join-section { padding: 80px 24px; }
-  .authors-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .authors-section, .join-section {
+    padding: 80px 24px;
+  }
+  
+  .authors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media (max-width: 767px) {
-  .authors-section, .join-section { padding: 64px 16px; }
-  .authors-grid { grid-template-columns: 1fr; gap: 24px; }
-  .author-image { width: 112px; height: 112px; }
-  .join-title { font-size: 36px; line-height: 44px; }
+  .authors-section, .join-section {
+    padding: 64px 16px;
+  }
+  
+  .authors-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .author-image {
+    width: 112px;
+    height: 112px;
+  }
+  
+  .join-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }

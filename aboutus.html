@@ -43,26 +43,29 @@
       transition: opacity 0.3s ease;
     }
     .social-icon:hover svg { opacity: 1; }
-
     .join-section {
-      padding: 96px 32px;
-      text-align: center;
-      background: #fff;
+        padding: 80px 20px;
+        background-color: white;
     }
-    .join-title { max-width: 600px; margin: 0 auto 16px auto; }
-    .join-text { max-width: 570px; margin: 0 auto 40px auto; color: #4C4C4C; }
+    .join-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     /* Адаптив */
     @media (max-width: 1280px) { .authors-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 991px) {
-      .authors-section, .join-section { padding: 80px 24px; }
+      .authors-section { padding: 80px 24px; }
       .authors-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     }
     @media (max-width: 767px) {
-      .authors-section, .join-section { padding: 64px 16px; }
+      .authors-section { padding: 64px 16px; }
       .authors-grid { grid-template-columns: 1fr; }
       .author-image { width: 112px; height: 112px; }
-      .join-title { font-size: 36px; line-height: 44px; }
+      .join-section {
+                padding: 40px 20px;
+            }
     }
   </style>
 </head>
@@ -178,14 +181,13 @@
     </div>
   </section>
 
-  <!-- JOIN OUR TEAM -->
-  <section class="join-section">
-    <h2 class="heading-h2 join-title">Join our team to be a part<br>of our story</h2>
-    <p class="body-01 join-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-    </p>
-    <a href="#" class="btn btn-primary">Join Now</a>
-  </section>
-
+    <!-- Join team  -->
+    <section class="join-section">
+        <div class="join-container">
+            <h2 class="heading-h2" style="margin-bottom: 16px;">Join our team to be a part<br>of our story</h2>
+            <p class="body-01 text-dark-gray" style="margin-bottom: 32px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn btn-primary">Join Now</a>
+        </div>
+    </section>
 </body>
 </html>
