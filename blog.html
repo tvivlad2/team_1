@@ -100,7 +100,7 @@
         }
         
         .join-section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background-color: white;
         }
         
@@ -120,6 +120,240 @@
             margin: 0 15px;
         }
         
+         /* стили футера */
+        .footer {
+            background: var(--color-primary); 
+            color: var(--color-light-gray);   
+            padding: 60px 80px 40px;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-weight: 700; 
+            font-size: 28px;
+            color: #FFF;
+            text-decoration: none;
+        }
+        
+        .footer-logo span { 
+            color: inherit; 
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-nav a {
+            color: var(--color-light-gray);
+            text-decoration: none;
+            font-weight: 500; 
+            transition: color .2s;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--color-accent); 
+        }
+
+        .subscribe-box {
+            background: #2e303f;
+            padding: 70px 80px;
+            width: 100%;
+        }
+        
+        .subscribe-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .subscribe-title {
+            color: #FFF;
+            line-height: 1.4;
+            margin: 0;
+            flex: 1;
+            max-width: 500px;
+            min-width: 300px;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+        
+        .subscribe-input {
+            background: #2e303f;
+            border: 1px solid rgba(109, 110, 118, 0.7); 
+            padding: 16px 18px;
+            color: #FFF; 
+            font-size: 16px; 
+            outline: none;
+            min-width: 260px;
+        }
+        
+        .subscribe-input::placeholder {
+            color: #6D6E76; 
+            opacity: 0.7; 
+        }
+
+        .subscribe-btn {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            padding: 16px 60px;
+            min-width: 180px;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 40px;
+            font-size: 14px; 
+            color: #94A3B8;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-links a {
+            color: #94A3B8;
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: rgba(148,163,184,0.1);
+            transition: all 0.2s;
+        }
+        
+        .social-links a:hover {
+            color: var(--color-accent); 
+            background: rgba(255,208,80,0.2);
+        }
+
+        /* футеровское */
+        @media (max-width: 992px) {
+            .footer { 
+                padding: 48px 40px 32px; 
+            }
+            
+            .footer-top { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+            }
+            
+            .footer-nav { 
+                justify-content: center; 
+            }
+            
+            .subscribe-box { 
+                padding: 50px 40px; 
+            }
+            
+            .subscribe-btn { 
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer { 
+                padding: 40px 24px 32px; 
+            }
+            
+            .footer-top {
+                gap: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .footer-logo {
+                font-size: 24px;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .subscribe-box { 
+                padding: 40px 24px; 
+            }
+            
+            .subscribe-inner { 
+                flex-direction: column; 
+                align-items: stretch;
+                gap: 24px;
+            }
+            
+            .subscribe-title {
+                font-size: 20px;
+                min-width: auto;
+                text-align: center;
+            }
+            
+            .subscribe-form { 
+                flex-direction: column;
+                width: 100%; 
+                gap: 12px; 
+            }
+            
+            .subscribe-input, 
+            .subscribe-btn { 
+                width: 100%;
+                min-width: auto;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+
         @media (max-width: 768px) {
             .header p {
                 font-size: 18px;
@@ -361,5 +595,66 @@
             <a href="#" class="btn btn-primary">Join Now</a>
         </div>
     </section>
+        <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#" class="footer-logo"><span>{</span>Finsweet</a>
+
+                <ul class="footer-nav body-01">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <div class="subscribe-box">
+                    <div class="subscribe-inner">
+                        <h3 class="subscribe-title heading-h4">
+                            Subscribe to our news letter to get latest updates and news
+                        </h3>
+
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="Enter Your Email" class="subscribe-input" />
+                            <button type="submit" class="subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact body-02">
+                    <div>Finstreet 118 2561 Fintown</div>
+                    <div>Hello@finsweet.com  020 7993 2905</div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 11.993 2.92547 15.3027 6.75 15.9028V10.3125H4.71875V8H6.75V6.2375C6.75 4.2325 7.94438 3.125 9.77172 3.125C10.6467 3.125 11.5625 3.28125 11.5625 3.28125V5.25H10.5538C9.56 5.25 9.25 5.86672 9.25 6.5V8H11.4688L11.1141 10.3125H9.25V15.9028C13.0745 15.3027 16 11.993 16 8Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.03344 13.0005C11.0697 13.0005 14.3722 7.99829 14.3722 3.66173C14.3722 3.5211 14.3691 3.37735 14.3628 3.23673C15.0052 2.77213 15.5597 2.19666 16 1.53735C15.4017 1.80356 14.7664 1.97741 14.1159 2.05298C14.8009 1.64243 15.3137 0.99747 15.5594 0.237666C14.915 0.619527 14.2104 0.888896 13.4756 1.03423C12.9806 0.508196 12.326 0.159899 11.6131 0.043189C10.9003 -0.0735213 10.1688 0.0478552 9.53183 0.388553C8.89486 0.72925 8.38787 1.27029 8.08923 1.92803C7.7906 2.58577 7.71695 3.32357 7.87969 4.02735C6.575 3.96188 5.29862 3.62296 4.13332 3.03255C2.96802 2.44215 1.9398 1.61345 1.11531 0.600166C0.696266 1.32265 0.568038 2.17759 0.756687 2.99122C0.945337 3.80485 1.43671 4.51612 2.13094 4.98048C1.60975 4.96393 1.09998 4.82361 0.64375 4.5711V4.61173C0.643283 5.36992 0.905399 6.10488 1.38554 6.69167C1.86568 7.27846 2.53422 7.68086 3.2775 7.83048C2.7947 7.96257 2.28799 7.98182 1.79656 7.88673C2.0063 8.53878 2.41438 9.10908 2.96385 9.51804C3.51331 9.92701 4.17675 10.1542 4.86156 10.168C3.69895 11.0812 2.26278 11.5766 0.784375 11.5742C0.522191 11.5738 0.260266 11.5578 0 11.5261C1.5019 12.4897 3.24902 13.0014 5.03344 13.0005Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1.44062C10.1375 1.44062 10.3906 1.45 11.2313 1.4875C12.0125 1.52187 12.4344 1.65313 12.7156 1.7625C13.0875 1.90625 13.3563 2.08125 13.6344 2.35938C13.9156 2.64062 14.0875 2.90625 14.2313 3.27813C14.3406 3.55938 14.4719 3.98438 14.5063 4.7625C14.5438 5.60625 14.5531 5.85938 14.5531 7.99375C14.5531 10.1313 14.5438 10.3844 14.5063 11.225C14.4719 12.0063 14.3406 12.4281 14.2313 12.7094C14.0875 13.0813 13.9125 13.35 13.6344 13.6281C13.3531 13.9094 13.0875 14.0813 12.7156 14.225C12.4344 14.3344 12.0094 14.4656 11.2313 14.5C10.3875 14.5375 10.1344 14.5469 8 14.5469C5.8625 14.5469 5.60938 14.5375 4.76875 14.5C3.9875 14.4656 3.56563 14.3344 3.28438 14.225C2.9125 14.0813 2.64375 13.9063 2.36563 13.6281C2.08438 13.3469 1.9125 13.0813 1.76875 12.7094C1.65938 12.4281 1.52813 12.0031 1.49375 11.225C1.45625 10.3813 1.44688 10.1281 1.44688 7.99375C1.44688 5.85625 1.45625 5.60313 1.49375 4.7625C1.52813 3.98125 1.65938 3.55938 1.76875 3.27813C1.9125 2.90625 2.0875 2.6375 2.36563 2.35938C2.64688 2.07812 2.9125 1.90625 3.28438 1.7625C3.56563 1.65313 3.99063 1.52187 4.76875 1.4875C5.60938 1.45 5.8625 1.44062 8 1.44062ZM8 0C5.82813 0 5.55625 0.009375 4.70313 0.046875C3.85313 0.084375 3.26875 0.221875 2.7625 0.41875C2.23438 0.625 1.7875 0.896875 1.34375 1.34375C0.896875 1.7875 0.625 2.23438 0.41875 2.75938C0.221875 3.26875 0.084375 3.85 0.046875 4.7C0.009375 5.55625 0 5.82812 0 8C0 10.1719 0.009375 10.4438 0.046875 11.2969C0.084375 12.1469 0.221875 12.7313 0.41875 13.2375C0.625 13.7656 0.896875 14.2125 1.34375 14.6562C1.7875 15.1 2.23438 15.375 2.75938 15.5781C3.26875 15.775 3.85 15.9125 4.7 15.95C5.55313 15.9875 5.825 15.9969 7.99688 15.9969C10.1688 15.9969 10.4406 15.9875 11.2938 15.95C12.1438 15.9125 12.7281 15.775 13.2344 15.5781C13.7594 15.375 14.2063 15.1 14.65 14.6562C15.0938 14.2125 15.3688 13.7656 15.5719 13.2406C15.7688 12.7313 15.9063 12.15 15.9438 11.3C15.9813 10.4469 15.9906 10.175 15.9906 8.00313C15.9906 5.83125 15.9813 5.55938 15.9438 4.70625C15.9063 3.85625 15.7688 3.27188 15.5719 2.76562C15.375 2.23438 15.1031 1.7875 14.6563 1.34375C14.2125 0.9 13.7656 0.625 13.2406 0.421875C12.7313 0.225 12.15 0.0875 11.3 0.05C10.4438 0.009375 10.1719 0 8 0Z" fill="currentColor"/>
+                            <path d="M8 3.89062C5.73125 3.89062 3.89062 5.73125 3.89062 8C3.89062 10.2688 5.73125 12.1094 8 12.1094C10.2688 12.1094 12.1094 10.2688 12.1094 8C12.1094 5.73125 10.2688 3.89062 8 3.89062ZM8 10.6656C6.52813 10.6656 5.33437 9.47188 5.33437 8C5.33437 6.52813 6.52813 5.33437 8 5.33437C9.47188 5.33437 10.6656 6.52813 10.6656 8C10.6656 9.47188 9.47188 10.6656 8 10.6656Z" fill="currentColor"/>
+                            <path d="M13.2312 3.72793C13.2312 4.25918 12.8 4.68731 12.2719 4.68731C11.7406 4.68731 11.3125 4.25606 11.3125 3.72793C11.3125 3.19668 11.7438 2.76855 12.2719 2.76855C12.8 2.76855 13.2312 3.19981 13.2312 3.72793Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.8156 0H1.18125C0.528125 0 0 0.515625 0 1.15313V14.8438C0 15.4813 0.528125 16 1.18125 16H14.8156C15.4688 16 16 15.4813 16 14.8469V1.15313C16 0.515625 15.4688 0 14.8156 0ZM4.74687 13.6344H2.37188V5.99687H4.74687V13.6344ZM3.55938 4.95625C2.79688 4.95625 2.18125 4.34062 2.18125 3.58125C2.18125 2.82188 2.79688 2.20625 3.55938 2.20625C4.31875 2.20625 4.93437 2.82188 4.93437 3.58125C4.93437 4.3375 4.31875 4.95625 3.55938 4.95625ZM13.6344 13.6344H11.2625V9.92188C11.2625 9.0375 11.2469 7.89687 10.0281 7.89687C8.79375 7.89687 8.60625 8.8625 8.60625 9.85938V13.6344H6.2375V5.99687H8.5125V7.04063H8.54375C8.85938 6.44063 9.63438 5.80625 10.7875 5.80625C13.1906 5.80625 13.6344 7.3875 13.6344 9.44375V13.6344Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
