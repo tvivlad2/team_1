@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        .site-header {
+            background-color: var(--color-primary);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+            position: relative;
+            width: 100%;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 32px;
+            color: #FFFFFF;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        .btn-subscribe {
+            background-color: #FFFFFF;
+            color: var(--color-primary);
+            padding: 16px 48px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            white-space: nowrap;
+            border-radius: 4px; 
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+        /* адаптив хедера  */
+        @media (max-width: 1024px) {
+            .site-header {
+                padding: 0 40px;
+            }
+            .nav-menu {
+                gap: 24px;
+            }
+            .btn-subscribe {
+                padding: 14px 36px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0 20px;
+                height: auto;
+                min-height: 80px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+                gap: 16px;
+                justify-content: center;
+            }
+
+            .nav-menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .btn-subscribe {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .btn-subscribe {
+                padding: 12px 24px;
+                width: auto;
+            }
+        }
+
+
+        /* стили мужика и адаптив */
+
+        .featured-post {
+      position: relative;
+      width: 100%;
+      height: 80vh; 
+      min-height: 500px; 
+      margin: 0px 0 0 0;
+      overflow: hidden;
+      color: white;
+    }
+    
+    .featured-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .featured-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+    }
+    
+    .featured-category {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 14px; 
+      line-height: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: white;
+      white-space: nowrap;
+    }
+    
+    .featured-category span {
+      font-weight: 700;
+    }
+    
+    .featured-text-block {
+      max-width: 800px;
+    }
+    
+    .featured-title {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 48px; 
+      line-height: 56px;
+      margin-bottom: 16px;
+    }
+    
+    .featured-meta {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+    
+    .featured-desc {
+      font-size: 18px; 
+      line-height: 28px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+      display: none; 
+    }
+    
+    .btn-primary {
+      padding: 14px 28px; 
+      font-size: 16px;
+    }
+    
+    @media (min-width: 1024px) {
+      .featured-post {
+        height: 720px;
+        margin: 0px auto 0 auto;
+        max-width: 1920px;
+      }
+      
+      .featured-overlay {
+        padding: 0;
+      }
+      
+      .featured-category {
+        position: absolute;
+        left: 120px;
+        top: 208px;
+        font-size: 16px;
+      }
+      
+      .featured-text-block {
+        position: absolute;
+        left: 120px;
+        bottom: 120px;
+      }
+      
+      .featured-title {
+        font-size: 56px;
+        line-height: 64px;
+      }
+      
+      .featured-desc {
+        display: block; /* Показываем описание на десктопе */
+        font-size: 20px;
+        line-height: 32px;
+        max-width: 800px;
+      }
+    }
+    
+    /* Планшеты (768–1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .featured-title {
+        font-size: 44px;
+        line-height: 52px;
+      }
+      
+      .featured-desc {
+        display: block;
+        font-size: 18px;
+        max-width: 700px;
+      }
+      
+      .featured-overlay {
+        padding: 60px 40px;
+      }
+    }
+    
+    /* Мобильные (<768px) */
+    @media (max-width: 767px) {
+      .featured-title {
+        font-size: 36px;
+        line-height: 44px;
+      }
+      
+      .featured-category {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+      
+      .featured-overlay {
+        padding: 40px 20px;
+        justify-content: flex-end; 
+      }
+      
+      .featured-text-block {
+        margin-top: auto;
+      }
+    }
+
+    /* index1 он же featured-post*/
+.blog-main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 120px 80px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .section-title {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      color: var(--color-primary);
+      margin-bottom: 40px;
+    }
+    .all-posts-header {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .view-all-link {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-purple);
+      font-weight: 500;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .featured-image-wrapper {
+      width: 669px;
+      height: 352px;
+    }
+    .featured-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured1-meta {
+      color: var(--color-dark-gray);
+      margin: 24px 0 16px;
+    }
+    .featured1-meta .author-name {
+      color: var(--color-purple);
+      font-weight: 700;
+    }
+    .featured1-title {
+      margin: 0 0 16px 0;
+      min-width: 200px;
+    }
+    .featured1-desc {
+      color: var(--color-dark-gray);
+      margin-bottom: 32px;
+    }
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    .post-list-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .post-list-item-meta {
+      color: var(--color-dark-gray);
+      margin-bottom: 8px;
+    }
+    .post-list-item-meta .author-name {
+      color: var(--color-purple);
+      font-weight: 700;
+    }
+    .post-list-item-title {
+      margin: 0;
+      max-width: 500px;
+    }
+
+    .highlighted {
+      position: relative;
+      padding: 26px 0; /* Вертикальный отступ */
+    }
+    .highlighted::before {
+      content: '';
+      position: absolute;
+      left: -40px; /* Выступ слева */
+      right: -40px; /* Выступ справа — фон шире */
+      top: 0;
+      bottom: 0;
+      background-color: var(--color-light-yellow);
+      z-index: -1;
+    }
+    @media (max-width: 1024px) {
+      .blog-main {
+        padding: 80px 40px;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .featured-image-wrapper img {
+        width: auto;
+      }
+      .view-all-link {
+        position: static;
+        transform: none;
+        display: block;
+        margin-top: 16px;
+      }
+      .highlighted::before {
+        left: 0;
+        right: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .blog-main {
+        padding: 60px 20px;
+      }
+      .section-title {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+
+    /*  categories  */
+
+      .categories-section {
+            padding: 20px 20px;
+            background-color: white;
+        }
+        
+        .categories-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            padding: 30px;
+            min-height: 210px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+        }
+        
+        .category-card.active {
+            background-color: var(--color-accent);
+            border: none;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-light-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .category-card.active .category-icon {
+            background-color: white;
+        }
+        
+        /*aboltus*/
+        .section-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .content-container {
+      width: 1280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .custom-pattern {
+      width: 1061px;
+      height: 23px;
+      display: flex;
+      margin-left: auto; 
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    .about-mission-container {
+      width: 1280px;
+      height: 500px;
+      background-color: var(--color-light-purple);
+      display: flex;
+      justify-content: space-between;
+      padding: 96px 80px 80px 80px;
+      box-sizing: border-box;
+    }
+
+    .about-column {
+      width: 515px; 
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mission-column {
+      width: 516px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cap-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--color-primary);
+    }
+
+    .h2-about {
+      width: 494px;
+      font-family: 'Sen', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: -2px; 
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .h3-mission {
+      width: 481px;
+      font-family: 'Sen', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .body-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: var(--color-medium-gray);
+    }
+
+    .about-column .body-text {
+      margin-bottom: 16px;
+    }
+
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      height: 32px;
+    }
+
+    .read-more-btn span {
+      font-family: 'Sen', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 32px;
+      color: var(--color-purple);
+      white-space: nowrap;
+    }
+
+    .read-more-btn:hover span {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 1300px) {
+      .content-container {
+        width: 95%;
+      }
+      .about-mission-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+      }
+      .custom-pattern {
+        width: 80%;
+      }
+      .about-column, .mission-column {
+        width: 100%;
+      }
+      .h2-about, .h3-mission {
+        width: 100%;
+      }
+    }
+    /* группа друзей или как её там*/
+    .about-section-container {
+            max-width: 1280px; 
+            margin: 0 auto;
+            padding: 0 0px 0px 0px; 
+            padding-top: 60px;
+            overflow: hidden; 
+        }
+        .about-layout {
+            display: flex;
+            align-items: flex-start; 
+            gap: 0;
+            padding-left: 0px;
+        }
+
+        .about-image-wrapper {
+            flex-shrink: 0;
+            width: 949px; 
+            height: 705px;
+            position: relative;
+            z-index: 1; 
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-text-content {
+            width: 706px; 
+            height: 584px; 
+            flex-shrink: 0;
+            background-color: white; 
+            padding: 60px 80px 96px 80px; 
+            margin-top: 121px; 
+            margin-left: -375px; 
+            z-index: 2; 
+            position: relative;
+
+
+        }
+        .about-text-content .label {
+            color:black;
+            font-size: 18px; 
+            line-height: 24px;
+            font-weight: 500
+        }
+        .about-text-content h2 {
+            font-size: 50px;
+            line-height: 64px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            max-width: 440px; 
+
+        }
+        .about-text-content .body-01 {
+            margin-bottom: 20px;
+
+        }
+        @media (max-width: 1280px) {
+            .about-section-container {
+                padding: 0 16px 48px 16px; 
+            }
+            .about-layout {
+                padding-left: 0;
+                flex-wrap: wrap; 
+            }
+            .about-image-wrapper {
+                width: 100%;
+                height: auto;
+            }
+            .about-text-content {
+                width: 100%;
+                height: auto;
+                padding: 40px 24px;
+                margin-top: 0; 
+                margin-left: 0; 
+                box-shadow: none;
+            }
+        }
+        @media (max-width: 767px) {
+            .about-text-content h2 {
+                font-size: 36px;
+                line-height: 48px;
+            }
+        }
+    /*логотипы */
+        .featured-in-section {
+      max-width: 1440px;
+      margin: 120px auto;
+      padding: 0 80px;
+      text-align: center;
+    }
+
+    .logos-wrapper {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      flex-wrap: wrap;
+      
+    }
+
+    .logos-wrapper img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8; 
+      flex-shrink: 0; 
+    }
+
+    .logos-wrapper img:first-child {
+      height: 48px;
+    }
+
+    @media (max-width: 1024px) {
+      .featured-in-section {
+        padding: 0 40px;
+      }
+
+   
+      .logos-wrapper img {
+        height: 36px;
+      }
+      .logos-wrapper img:first-child {
+        height: 42px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-in-section {
+        padding: 0 20px;
+        margin: 80px auto;
+        min-width: 500px;
+      }
+      .logos-wrapper {
+        justify-content: space-around; 
+        gap: 20px; 
+      }
+      .logos-wrapper img {
+        height: 32px;
+      }
+      .logos-wrapper img:first-child {
+        height: 38px;
+      }
+    }
+    @media (max-width: 768px) {
+
+    .logos-wrapper {
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+    }
+    }
+
+    /* testi.. */
+     .testimonials-section {
+      background-color: var(--color-light-yellow); /* #FBF6EA из styles.css */
+      padding: 80px;
+      max-width: 1280px;
+      margin: 0 auto 128px auto;
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+      box-sizing: border-box;
+    }
+
+    /* Левая колонка */
+    .testimonials-left {
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .testimonials-subtitle {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .testimonials-title {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 48px;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .testimonials-desc {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: var(--color-primary);
+    }
+
+    /* Вертикальный разделитель */
+    .testimonials-divider {
+      width: 1px;
+      height: 310px;
+      background-color: var(--color-medium-gray);
+      opacity: 0.4;
+    }
+
+    /* Правая колонка */
+    .testimonials-right {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      color: var(--color-primary);
+      margin: 0;
+      max-width: 510px;
+    }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    /* Автор */
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-name {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      color: var(--color-primary);
+      margin: 0;
+    }
+
+    .author-location {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: var(--color-medium-gray);
+      margin: 0;
+    }
+
+    /* Навигация (кнопки) */
+    .testimonial-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn-left {
+      background-color: #FFFFFF;
+    }
+
+    .nav-btn-right {
+      background-color: var(--color-primary);
+    }
+
+    /* Адаптив */
+    @media (max-width: 1024px) {
+      .testimonials-section {
+        flex-direction: column;
+        padding: 40px;
+      }
+      .testimonials-divider {
+        display: none;
+      }
+    }
+
+     /* стили футера */
+        .footer {
+            background: var(--color-primary); 
+            color: var(--color-light-gray);   
+            padding: 60px 80px 40px;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-weight: 700; 
+            font-size: 28px;
+            color: #FFF;
+            text-decoration: none;
+        }
+        
+        .footer-logo span { 
+            color: inherit; 
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-nav a {
+            color: var(--color-light-gray);
+            text-decoration: none;
+            font-weight: 500; 
+            transition: color .2s;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--color-accent); 
+        }
+
+        .subscribe-box {
+            background: #2e303f;
+            padding: 70px 80px;
+            width: 100%;
+        }
+        
+        .subscribe-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .subscribe-title {
+            color: #FFF;
+            line-height: 1.4;
+            margin: 0;
+            flex: 1;
+            justify-content: center;
+            max-width: 500px;
+            min-width: 300px;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+        
+        .subscribe-input {
+            background: #2e303f;
+            border: 1px solid rgba(109, 110, 118, 0.7); 
+            padding: 16px 18px;
+            color: #FFF; 
+            font-size: 16px; 
+            outline: none;
+            min-width: 260px;
+        }
+        
+        .subscribe-input::placeholder {
+            color: #6D6E76; 
+            opacity: 0.7; 
+        }
+
+        .subscribe-btn {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            padding: 16px 60px;
+            min-width: 180px;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 40px;
+            font-size: 14px; 
+            color: #94A3B8;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-links a {
+            color: #94A3B8;
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: rgba(148,163,184,0.1);
+            transition: all 0.2s;
+        }
+        
+        .social-links a:hover {
+            color: var(--color-accent); 
+            background: rgba(255,208,80,0.2);
+        }
+
+        /* футеровское */
+        @media (max-width: 992px) {
+            .footer { 
+                padding: 48px 40px 32px; 
+            }
+            
+            .footer-top { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+            }
+            
+            .footer-nav { 
+                justify-content: center; 
+            }
+            
+            .subscribe-box { 
+                padding: 50px 40px; 
+            }
+            
+            .subscribe-btn { 
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer { 
+                padding: 40px 24px 32px; 
+            }
+            
+            .footer-top {
+                gap: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .footer-logo {
+                font-size: 24px;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .subscribe-box { 
+                padding: 40px 24px; 
+            }
+            
+            .subscribe-inner { 
+                flex-direction: column; 
+                align-items: stretch;
+                gap: 24px;
+            }
+            
+            .subscribe-title {
+                font-size: 20px;
+                min-width: auto;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .subscribe-form { 
+                flex-direction: column;
+                width: 100%; 
+                gap: 12px; 
+            }
+            
+            .subscribe-input, 
+            .subscribe-btn { 
+                width: 100%;
+                min-width: auto;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!--header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">{Finsweet</a>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="#" class="nav-link">Contact us</a>
+                <a href="#" class="btn-subscribe">Subscribe</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="featured-post">
+    <img src="img/home/man.jpg" alt="Step-by-step guide to choosing great font pairs">
+    
+    <div class="featured-overlay">
+      <!-- Категория сверху (на десктопе фиксирована, на мобильных в потоке) -->
+      <div class="featured-category">
+        Posted on <span>startup</span>
+      </div>
+      
+      <!-- Основной текст снизу -->
+      <div class="featured-text-block">
+        <h1 class="featured-title">Step-by-step guide to choosing great font pairs</h1>
+        
+        <p class="featured-meta body-01">
+          By <span style="color: var(--color-accent); font-weight: 700;">James West</span> | May 23, 2022
+        </p>
+        
+        <p class="featured-desc">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+        </p>
+        
+        <a href="#" class="btn btn-primary">Read More ></a>
+      </div>
+    </div>
+  </section>
+<section class="blog-main">
+    <div class="blog-grid">
+      <!-- Featured Post -->
+      <div>
+        <h2 class="section-title">Featured Post</h2>
+        <article>
+          <div class="featured-image-wrapper">
+            <img src="img/home/house.jpg" alt="Building with palm tree">
+          </div>
+          <p class="body-02 featured-meta">
+            By <span class="author-name">John Doe</span> | May 23, 2022
+          </p>
+          <h3 class="heading-h3 featured1-title">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+          </h3>
+          <p class="body-01 featured-desc">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          </p>
+          <a href="#" class="btn btn-primary">Read More ></a>
+        </article>
+      </div>
+      <!-- All Posts -->
+      <div>
+        <div class="all-posts-header">
+          <h2 class="section-title">All Posts</h2>
+          <a href="#" class="view-all-link">View All</a>
+        </div>
+        <div class="post-list">
+          <div class="post-list-item">
+            <p class="body-02 post-list-item-meta">By <span class="author-name">John Doe</span> | Aug 23, 2021</p>
+            <h4 class="heading-h4 post-list-item-title">8 Figma design systems that you can download for free today.</h4>
+          </div>
+          <div class="post-list-item highlighted">
+            <p class="body-02 post-list-item-meta">By <span class="author-name">John Doe</span> | Aug 23, 2021</p>
+            <h4 class="heading-h4 post-list-item-title">8 Figma design systems that you can download for free today.</h4>
+          </div>
+          <div class="post-list-item">
+            <p class="body-02 post-list-item-meta">By <span class="author-name">John Doe</span> | Aug 23, 2021</p>
+            <h4 class="heading-h4 post-list-item-title">8 Figma design systems that you can download for free today.</h4>
+          </div>
+          <div class="post-list-item">
+            <p class="body-02 post-list-item-meta">By <span class="author-name">John Doe</span> | Aug 23, 2021</p>
+            <h4 class="heading-h4 post-list-item-title">8 Figma design systems that you can download for free today.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- aboltus -->
+ <div class="section-wrapper">
+    <div class="content-container">
+      
+      <div class="custom-pattern">
+        <div style="flex: 3; background-color: #FFD050;"></div>
+        <div style="flex: 1; background-color: #592EA9;"></div>
+      </div>
+
+      <div class="about-mission-container">
+        
+        <div class="about-column">
+          <div class="cap-label">About Us</div>
+          <h2 class="h2-about">We are a community of content writers who share their learnings</h2>
+          <p class="body-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a href="#" class="read-more-btn">
+            <span>Read More &gt;</span>
+          </a>
+        </div>
+
+        <div class="mission-column">
+          <div class="cap-label">Our mision</div>
+          <h3 class="h3-mission">Creating valuable content for creatives all around the world</h3>
+          <p class="body-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ <!-- Categories section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <h3 class="heading-h2" style="display: flex; margin-bottom: 40px; justify-content: center;">Choose A Category</h3>
+            <div class="categories-grid">
+                <!-- Business category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 48H9C4.029 48 0 43.971 0 39V9C0 4.029 4.029 0 9 0H39C43.971 0 48 4.029 48 9V39C48 43.971 43.971 48 39 48Z" fill="#FBF6EA"/>
+                            <path d="M25.0305 13.914L14.04 12.2445C13.53 12.165 13.0095 12.3045 12.6195 12.6345C12.2295 12.975 12 13.464 12 13.974V35.0445C12 35.595 12.45 36.045 13.0005 36.045H16.251V30.795C16.251 29.8245 17.031 29.0445 18.0015 29.0445H20.502C21.4725 29.0445 22.2525 29.8245 22.2525 30.795V36.045H26.502V15.645C26.5005 14.784 25.8795 14.055 25.0305 13.914ZM17.5005 26.7945H16.0005C15.5865 26.7945 15.2505 26.4585 15.2505 26.0445C15.2505 25.6305 15.5865 25.2945 16.0005 25.2945H17.5005C17.9145 25.2945 18.2505 25.6305 18.2505 26.0445C18.2505 26.4585 17.9145 26.7945 17.5005 26.7945ZM17.5005 23.7945H16.0005C15.5865 23.7945 15.2505 23.4585 15.2505 23.0445C15.2505 22.6305 15.5865 22.2945 16.0005 22.2945H17.5005C17.9145 22.2945 18.2505 22.6305 18.2505 23.0445C18.2505 23.4585 17.9145 23.7945 17.5005 23.7945ZM17.5005 20.7945H16.0005C15.5865 20.7945 15.2505 20.4585 15.2505 20.0445C15.2505 19.6305 15.5865 19.2945 16.0005 19.2945H17.5005C17.9145 19.2945 18.2505 19.6305 18.2505 20.0445C18.2505 20.4585 17.9145 20.7945 17.5005 20.7945ZM17.5005 17.7945H16.0005C15.5865 17.7945 15.2505 17.4585 15.2505 17.0445C15.2505 16.6305 15.5865 16.2945 16.0005 16.2945H17.5005C17.9145 16.2945 18.2505 16.6305 18.2505 17.0445C18.2505 17.4585 17.9145 17.7945 17.5005 17.7945ZM22.5 26.7945H21C20.586 26.7945 20.25 26.4585 20.25 26.0445C20.25 25.6305 20.586 25.2945 21 25.2945H22.5C22.914 25.2945 23.25 25.6305 23.25 26.0445C23.25 26.4585 22.914 26.7945 22.5 26.7945ZM22.5 23.7945H21C20.586 23.7945 20.25 23.4585 20.25 23.0445C20.25 22.6305 20.586 22.2945 21 22.2945H22.5C22.914 22.2945 23.25 22.6305 23.25 23.0445C23.25 23.4585 22.914 23.7945 22.5 23.7945ZM22.5 20.7945H21C20.586 20.7945 20.25 20.4585 20.25 20.0445C20.25 19.6305 20.586 19.2945 21 19.2945H22.5C22.914 19.2945 23.25 19.6305 23.25 20.0445C23.25 20.4585 22.914 20.7945 22.5 20.7945ZM22.5 17.7945H21C20.586 17.7945 20.25 17.4585 20.25 17.0445C20.25 16.6305 20.586 16.2945 21 16.2945H22.5C22.914 16.2945 23.25 16.6305 23.25 17.0445C23.25 17.4585 22.914 17.7945 22.5 17.7945Z" fill="#232536"/>
+                            <path d="M34.6205 22.887L27.5 21.396V36.045H34.25C35.2145 36.045 36.0005 35.2605 36.0005 34.2945V24.597C36.0005 23.7705 35.4365 23.067 34.6205 22.887ZM32.2505 33.045H30.7505C30.3365 33.045 30.0005 32.709 30.0005 32.295C30.0005 31.881 30.3365 31.545 30.7505 31.545H32.2505C32.6645 31.545 33.0005 31.881 33.0005 32.295C33.0005 32.709 32.6645 33.045 32.2505 33.045ZM32.2505 30.045H30.7505C30.3365 30.045 30.0005 29.709 30.0005 29.295C30.0005 28.881 30.3365 28.545 30.7505 28.545H32.2505C32.6645 28.545 33.0005 28.881 33.0005 29.295C33.0005 29.709 32.6645 30.045 32.2505 30.045ZM32.2505 27.045H30.7505C30.3365 27.045 30.0005 26.709 30.0005 26.295C30.0005 25.881 30.3365 25.545 30.7505 25.545H32.2505C32.6645 25.545 33.0005 25.881 33.0005 26.295C33.0005 26.709 32.6645 27.045 32.2505 27.045Z" fill="#FFD050"/>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Business</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, alias!</p>
+                </div>
+
+                <!-- Startup category -->
+                <div class="category-card active">
+                    <div class="category-icon">
+                        <!-- rocket-->
+                       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39 48H9C4.029 48 0 43.971 0 39V9C0 4.029 4.029 0 9 0H39C43.971 0 48 4.029 48 9V39C48 43.971 43.971 48 39 48Z" fill="#FBF6EA"/>
+                        <g clip-path="url(#clip0_27_387)">
+                        <path d="M17.8505 18.2114L15.8579 18.3654C15.3034 18.4082 14.8096 18.6988 14.503 19.1626L12.2049 22.6383C11.9724 22.99 11.9354 23.4302 12.106 23.8158C12.2766 24.2014 12.6272 24.4702 13.0439 24.5347L14.8683 24.8173C15.2951 22.5523 16.3168 20.293 17.8505 18.2114Z" fill="#FFD050"/>
+                        <path d="M22.1836 32.1316L22.4662 33.9561C22.5307 34.3728 22.7995 34.7234 23.185 34.8939C23.3454 34.9649 23.5152 34.9999 23.6842 34.9999C23.9215 34.9999 24.1572 34.9308 24.3626 34.795L27.8384 32.497C28.3022 32.1903 28.5928 31.6964 28.6355 31.142L28.7895 29.1494C26.7079 30.6832 24.4486 31.7049 22.1836 32.1316Z" fill="#FFD050"/>
+                        <path d="M21.4966 30.8665C21.5599 30.8665 21.6236 30.8613 21.6872 30.8507C22.6361 30.6921 23.5507 30.4248 24.4232 30.0749L16.9244 22.5762C16.5746 23.4486 16.3073 24.3632 16.1486 25.3122C16.0861 25.6862 16.2116 26.0673 16.4797 26.3355L20.6639 30.5196C20.8865 30.7422 21.187 30.8665 21.4966 30.8665Z" fill="#FFD050"/>
+                        <path d="M33.1661 22.1973C35.0011 18.6497 35.069 14.9007 34.9731 13.1425C34.9403 12.54 34.46 12.0597 33.8575 12.0269C33.5712 12.0113 33.2319 12 32.8495 12C30.8835 12 27.7726 12.2978 24.8027 13.834C22.4424 15.0548 19.3475 17.7429 17.5215 21.2757C17.543 21.2925 17.5641 21.3104 17.584 21.3302L25.6698 29.4161C25.6897 29.436 25.7075 29.457 25.7244 29.4786C29.2571 27.6525 31.9453 24.5576 33.1661 22.1973ZM25.3731 16.8623C26.6866 15.5488 28.8241 15.5486 30.1377 16.8623C30.7741 17.4986 31.1245 18.3447 31.1245 19.2446C31.1245 20.1445 30.7741 20.9906 30.1377 21.627C29.481 22.2837 28.618 22.6121 27.7554 22.6122C26.8925 22.6122 26.03 22.2838 25.3731 21.627C24.7367 20.9906 24.3863 20.1445 24.3863 19.2446C24.3863 18.3447 24.7367 17.4986 25.3731 16.8623Z" fill="#232536"/>
+                        <path d="M26.3264 20.674C27.1146 21.4622 28.3971 21.4622 29.1853 20.674C29.5671 20.2922 29.7773 19.7846 29.7773 19.2446C29.7773 18.7047 29.5671 18.197 29.1853 17.8152C28.7912 17.4211 28.2735 17.2241 27.7559 17.2241C27.2382 17.2241 26.7205 17.4211 26.3265 17.8152C25.9447 18.197 25.7344 18.7047 25.7344 19.2446C25.7344 19.7846 25.9447 20.2922 26.3264 20.674Z" fill="#232536"/>
+                        <path d="M12.6875 30.9539C12.86 30.9539 13.0324 30.8881 13.164 30.7565L15.3639 28.5565C15.6271 28.2934 15.6271 27.8668 15.3639 27.6036C15.1008 27.3405 14.6741 27.3405 14.411 27.6036L12.211 29.8036C11.9479 30.0667 11.9479 30.4934 12.211 30.7565C12.3426 30.8881 12.5151 30.9539 12.6875 30.9539Z" fill="#FFD050"/>
+                        <path d="M17.3799 29.6202C17.1168 29.3571 16.6901 29.3571 16.427 29.6202L12.1974 33.8498C11.9342 34.113 11.9342 34.5396 12.1974 34.8028C12.3289 34.9343 12.5014 35.0001 12.6739 35.0001C12.8463 35.0001 13.0188 34.9343 13.1503 34.8027L17.3799 30.5731C17.6431 30.31 17.6431 29.8834 17.3799 29.6202Z" fill="#FFD050"/>
+                        <path d="M18.4422 31.6358L16.2423 33.8358C15.9791 34.099 15.9791 34.5256 16.2423 34.7887C16.3739 34.9203 16.5463 34.9861 16.7187 34.9861C16.8911 34.9861 17.0636 34.9203 17.1952 34.7887L19.3951 32.5888C19.6583 32.3256 19.6583 31.899 19.3951 31.6358C19.132 31.3727 18.7054 31.3727 18.4422 31.6358Z" fill="#FFD050"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_27_387">
+                        <rect width="23" height="23" fill="white" transform="translate(12 12)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Startup</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, ex.</p>
+                </div>
+
+                <!-- Economy category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <!-- economy -->
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 49H9C4.029 49 0 44.971 0 40V10C0 5.029 4.029 1 9 1H39C43.971 1 48 5.029 48 10V40C48 44.971 43.971 49 39 49Z" fill="#FBF6EA"/>
+                            <g clip-path="url(#clip0_27_387)">
+                            <path d="M18.1156 27.4253H15.5317C14.5999 27.4253 13.8418 28.2179 13.8418 29.192V34.915C13.8418 35.5133 14.3074 36 14.8796 36H18.7676C19.3398 36 19.8054 35.5133 19.8054 34.915V29.1921C19.8054 28.2179 19.0474 27.4253 18.1156 27.4253Z" fill="#232536"/>
+                            <path d="M25.6996 23.9492H23.1157C22.1839 23.9492 21.4258 24.7418 21.4258 25.7159V34.9148C21.4258 35.5131 21.8914 35.9998 22.4636 35.9998H26.3516C26.9239 35.9998 27.3894 35.5131 27.3894 34.9148V25.7159C27.3894 24.7417 26.6314 23.9492 25.6996 23.9492Z" fill="#232536"/>
+                            <path d="M33.4261 19.9888H30.8423C29.9104 19.9888 29.1523 20.7813 29.1523 21.7554V34.9148C29.1523 35.5131 29.6179 35.9998 30.1901 35.9998H34.0781C34.6504 35.9998 35.1159 35.5131 35.1159 34.9148V21.7554C35.116 20.7813 34.3579 19.9888 33.4261 19.9888Z" fill="#232536"/>
+                            <path d="M31.3681 12.6682C31.052 12.2011 30.538 11.9541 29.9929 12.0064L25.1128 12.4785C24.5678 12.5312 24.1059 12.8729 23.8771 13.3926C23.6483 13.9123 23.7004 14.5015 24.0165 14.9686L24.2889 15.371L18.2318 19.7468L18.2256 19.7513C17.7958 20.0693 17.5102 20.5432 17.4213 21.0858C17.3325 21.6284 17.4511 22.1746 17.7552 22.624C18.0593 23.0733 18.5127 23.3719 19.0317 23.4648C19.1441 23.4849 19.2567 23.4949 19.3685 23.4949C19.7713 23.4949 20.1637 23.3657 20.4996 23.1184L26.5664 18.7357L26.8476 19.1511C27.1357 19.5767 27.588 19.8198 28.0783 19.8198C28.1261 19.8198 28.1743 19.8175 28.2228 19.8128C28.7677 19.7601 29.2297 19.4183 29.4585 18.8986L31.5076 14.2441C31.7364 13.7243 31.6843 13.1352 31.3681 12.6682Z" fill="#FFD050"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_27_387">
+                            <rect width="22.9565" height="24" fill="white" transform="translate(13 12)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h4" style="margin-bottom: 8px;">Economy</h5>
+                    <p class="body-02 text-dark-gray"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+
+                <!-- Technology category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <!-- technology-head -->
+                        <svg width="48" height="50" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39 50H9C4.029 50 0 45.971 0 41V11C0 6.029 4.029 2 9 2H39C43.971 2 48 6.029 48 11V41C48 45.971 43.971 50 39 50Z" fill="#FBF6EA"/>
+                            <g clip-path="url(#clip0_27_387)">
+                            <path d="M27.5176 19.0312C27.5176 19.8065 28.1486 20.4375 28.9238 20.4375H33.1042C33.0283 19.4479 32.7988 18.5021 32.4316 17.625H28.9238C28.1486 17.625 27.5176 18.256 27.5176 19.0312Z" fill="#232536"/>
+                            <path d="M18.377 36H26.8145C27.2031 36 27.5176 35.6855 27.5176 35.2969V31.6875H28.9238V27.1172L21.893 21.8438H15.5645C15.1758 21.8438 14.8613 22.1582 14.8613 22.5469C14.8613 25.0373 15.8824 27.4228 17.6738 29.1428V35.2969C17.6738 35.6855 17.9883 36 18.377 36Z" fill="#FFD050"/>
+                            <path d="M24.002 12C23.6133 12 23.2988 12.3145 23.2988 12.7031V13.4062H20.3568C20.0656 12.5896 19.2924 12 18.377 12C17.2138 12 16.2676 12.9462 16.2676 14.1094C16.2676 15.2725 17.2138 16.2188 18.377 16.2188C19.2924 16.2188 20.0656 15.6292 20.3568 14.8125H23.2988V17.625H16.1381C15.8468 16.8083 15.0737 16.2188 14.1582 16.2188C12.995 16.2188 12.002 17.165 12.002 18.3281C12.002 19.4913 12.995 20.4375 14.1582 20.4375C15.0737 20.4375 15.8468 19.8479 16.1381 19.0312H23.2988V21.141L30.0485 26.2033C30.2257 26.3358 30.3301 26.5445 30.3301 26.7656V31.6875H31.0332C32.1964 31.6875 33.1426 30.7413 33.1426 29.5781V26.0625H35.2988C35.5584 26.0625 35.7966 25.9197 35.9189 25.691C36.0411 25.4624 36.0274 25.185 35.8839 24.9693L33.7533 21.8438H28.9238C27.3727 21.8438 26.1113 20.5824 26.1113 19.0312C26.1113 17.4801 27.3727 16.2188 28.9238 16.2188H31.6897C30.0628 13.6865 27.2291 12 24.002 12V12Z" fill="#232536"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_27_387">
+                            <rect width="24" height="24" fill="white" transform="translate(12 12)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h5 class="heading-h5" style="margin-bottom: 8px;">Technology</h5>
+                    <p class="body-02 text-dark-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section-container">
+        <div class="about-layout">
+            <div class="about-image-wrapper">
+                <img src="img/home/kids.jpg" alt="A group of friends looking at the sunset" class="about-image">
+            </div>
+            <div class="about-text-content">
+                <p class="label text-primary">WHY WE STARTED</p>
+                <h2 class="text-primary">It started out as a simple idea and evolved into our passion</h2>
+                <p class="body-01 text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+
+                
+
+                <a href="#" class="btn btn-primary">Discover our story ></a>
+            </div>
+        </div>
+    </section>
+    <section class="authors-section">
+        <div class="container">
+            <h2 class="heading-h2" style="margin-bottom: 48px;">List of Authors</h2>
+
+            <div class="authors-grid">
+                
+                <div class="author-card bg-light-gray">
+                    <img src="img/home/floyd-miles.jpg" alt="Floyd Miles" class="author-image">
+                    <h3 class="author-name heading-h3">Floyd Miles</h3>
+                    <p class="author-role body-02 text-medium-gray">Content Writer @Company</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M16 8.001C16 3.582 12.418 0 8 0S0 3.582 0 8.001c0 3.996 2.924 7.31 6.75 7.91v-5.6H4.719V8.001H6.75V6.237c0-2.004 1.194-3.111 3.022-3.111.876 0 1.791.156 1.791.156v1.968h-1.009c-.994 0-1.303.617-1.303 1.25v1.501h2.218l-.354 2.311H9.251v5.6C13.076 15.311 16 11.997 16 8.001Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5.025 14.167c6.033 0 9.333-5 9.333-9.334 0-.141 0-.283-.008-.425A6.643 6.643 0 0 0 16 2.692a6.49 6.49 0 0 1-1.883.517 3.298 3.298 0 0 0 1.441-1.817 6.543 6.543 0 0 1-2.083.791A3.266 3.266 0 0 0 11.092 1.167a3.284 3.284 0 0 0-3.284 3.283c0 .258.025.508.084.75A9.324 9.324 0 0 1 1.125 1.75a3.291 3.291 0 0 0 1.016 4.384 3.268 3.268 0 0 1-1.483-.417v.042a3.288 3.288 0 0 0 2.633 3.225 3.29 3.29 0 0 1-.866.117 3.1 3.1 0 0 1-.617-.059 3.29 3.29 0 0 0 3.067 2.284 6.593 6.593 0 0 1-4.084 1.408c-.266 0-.525-.016-.783-.05a9.28 9.28 0 0 0 5.017 1.475"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.298.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.002Zm0 1.44c2.137 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.486-.276a2.478 2.478 0 0 1-.919-.598 2.48 2.48 0 0 1-.599-.919c-.11-.281-.24-.705-.275-1.485-.038-.843-.047-1.096-.047-3.232s.009-2.388.047-3.231c.036-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002Zm0 2.452a4.108 4.108 0 1 0 0 8.215 4.108 4.108 0 0 0 0-8.215Zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334Zm5.273-5.787a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.82 0H1.18A1.169 1.169 0 0 0 0 1.154v13.694A1.168 1.168 0 0 0 1.18 16h13.64A1.17 1.17 0 0 0 16 14.845V1.15A1.171 1.171 0 0 0 14.82 0ZM4.744 13.64H2.369V6h2.375v7.64Zm-1.187-8.683a1.376 1.376 0 1 1 .005-2.753 1.376 1.376 0 0 1-.005 2.753ZM13.64 13.64h-2.375V9.922c0-.887-.015-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.784H6.23V6h2.28v1.045h.032c.317-.6.109 1.028 2.032 1.028 2.172 0 2.574 1.43 2.574 3.29v4.275Z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="author-card bg-light-yellow">
+                    <img src="img/home/dianne-russell.jpg" alt="Dianne Russell" class="author-image">
+                    <h3 class="author-name heading-h3">Dianne Russell</h3>
+                    <p class="author-role body-02 text-medium-gray">Content Writer @Company</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M16 8.001C16 3.582 12.418 0 8 0S0 3.582 0 8.001c0 3.996 2.924 7.31 6.75 7.91v-5.6H4.719V8.001H6.75V6.237c0-2.004 1.194-3.111 3.022-3.111.876 0 1.791.156 1.791.156v1.968h-1.009c-.994 0-1.303.617-1.303 1.25v1.501h2.218l-.354 2.311H9.251v5.6C13.076 15.311 16 11.997 16 8.001Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5.025 14.167c6.033 0 9.333-5 9.333-9.334 0-.141 0-.283-.008-.425A6.643 6.643 0 0 0 16 2.692a6.49 6.49 0 0 1-1.883.517 3.298 3.298 0 0 0 1.441-1.817 6.543 6.543 0 0 1-2.083.791A3.266 3.266 0 0 0 11.092 1.167a3.284 3.284 0 0 0-3.284 3.283c0 .258.025.508.084.75A9.324 9.324 0 0 1 1.125 1.75a3.291 3.291 0 0 0 1.016 4.384 3.268 3.268 0 0 1-1.483-.417v.042a3.288 3.288 0 0 0 2.633 3.225 3.29 3.29 0 0 1-.866.117 3.1 3.1 0 0 1-.617-.059 3.29 3.29 0 0 0 3.067 2.284 6.593 6.593 0 0 1-4.084 1.408c-.266 0-.525-.016-.783-.05a9.28 9.28 0 0 0 5.017 1.475"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.298.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.002Zm0 1.44c2.137 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.486-.276a2.478 2.478 0 0 1-.919-.598 2.48 2.48 0 0 1-.599-.919c-.11-.281-.24-.705-.275-1.485-.038-.843-.047-1.096-.047-3.232s.009-2.388.047-3.231c.036-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002Zm0 2.452a4.108 4.108 0 1 0 0 8.215 4.108 4.108 0 0 0 0-8.215Zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334Zm5.273-5.787a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.82 0H1.18A1.169 1.169 0 0 0 0 1.154v13.694A1.168 1.168 0 0 0 1.18 16h13.64A1.17 1.17 0 0 0 16 14.845V1.15A1.171 1.171 0 0 0 14.82 0ZM4.744 13.64H2.369V6h2.375v7.64Zm-1.187-8.683a1.376 1.376 0 1 1 .005-2.753 1.376 1.376 0 0 1-.005 2.753ZM13.64 13.64h-2.375V9.922c0-.887-.015-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.784H6.23V6h2.28v1.045h.032c.317-.6.109 1.028 2.032 1.028 2.172 0 2.574 1.43 2.574 3.29v4.275Z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="author-card bg-light-gray">
+                    <img src="img/home/jenny-wilson.jpg" alt="Jenny Wilson" class="author-image">
+                    <h3 class="author-name heading-h3">Jenny Wilson</h3>
+                    <p class="author-role body-02 text-medium-gray">Content Writer @Company</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M16 8.001C16 3.582 12.418 0 8 0S0 3.582 0 8.001c0 3.996 2.924 7.31 6.75 7.91v-5.6H4.719V8.001H6.75V6.237c0-2.004 1.194-3.111 3.022-3.111.876 0 1.791.156 1.791.156v1.968h-1.009c-.994 0-1.303.617-1.303 1.25v1.501h2.218l-.354 2.311H9.251v5.6C13.076 15.311 16 11.997 16 8.001Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5.025 14.167c6.033 0 9.333-5 9.333-9.334 0-.141 0-.283-.008-.425A6.643 6.643 0 0 0 16 2.692a6.49 6.49 0 0 1-1.883.517 3.298 3.298 0 0 0 1.441-1.817 6.543 6.543 0 0 1-2.083.791A3.266 3.266 0 0 0 11.092 1.167a3.284 3.284 0 0 0-3.284 3.283c0 .258.025.508.084.75A9.324 9.324 0 0 1 1.125 1.75a3.291 3.291 0 0 0 1.016 4.384 3.268 3.268 0 0 1-1.483-.417v.042a3.288 3.288 0 0 0 2.633 3.225 3.29 3.29 0 0 1-.866.117 3.1 3.1 0 0 1-.617-.059 3.29 3.29 0 0 0 3.067 2.284 6.593 6.593 0 0 1-4.084 1.408c-.266 0-.525-.016-.783-.05a9.28 9.28 0 0 0 5.017 1.475"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.298.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.002Zm0 1.44c2.137 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.486-.276a2.478 2.478 0 0 1-.919-.598 2.48 2.48 0 0 1-.599-.919c-.11-.281-.24-.705-.275-1.485-.038-.843-.047-1.096-.047-3.232s.009-2.388.047-3.231c.036-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002Zm0 2.452a4.108 4.108 0 1 0 0 8.215 4.108 4.108 0 0 0 0-8.215Zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334Zm5.273-5.787a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.82 0H1.18A1.169 1.169 0 0 0 0 1.154v13.694A1.168 1.168 0 0 0 1.18 16h13.64A1.17 1.17 0 0 0 16 14.845V1.15A1.171 1.171 0 0 0 14.82 0ZM4.744 13.64H2.369V6h2.375v7.64Zm-1.187-8.683a1.376 1.376 0 1 1 .005-2.753 1.376 1.376 0 0 1-.005 2.753ZM13.64 13.64h-2.375V9.922c0-.887-.015-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.784H6.23V6h2.28v1.045h.032c.317-.6.109 1.028 2.032 1.028 2.172 0 2.574 1.43 2.574 3.29v4.275Z"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="author-card bg-light-gray">
+                    <img src="img/home/leslie-alexander.jpg" alt="Leslie Alexander" class="author-image">
+                    <h3 class="author-name heading-h3">Leslie Alexander</h3>
+                    <p class="author-role body-02 text-medium-gray">Content Writer @Company</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M16 8.001C16 3.582 12.418 0 8 0S0 3.582 0 8.001c0 3.996 2.924 7.31 6.75 7.91v-5.6H4.719V8.001H6.75V6.237c0-2.004 1.194-3.111 3.022-3.111.876 0 1.791.156 1.791.156v1.968h-1.009c-.994 0-1.303.617-1.303 1.25v1.501h2.218l-.354 2.311H9.251v5.6C13.076 15.311 16 11.997 16 8.001Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5.025 14.167c6.033 0 9.333-5 9.333-9.334 0-.141 0-.283-.008-.425A6.643 6.643 0 0 0 16 2.692a6.49 6.49 0 0 1-1.883.517 3.298 3.298 0 0 0 1.441-1.817 6.543 6.543 0 0 1-2.083.791A3.266 3.266 0 0 0 11.092 1.167a3.284 3.284 0 0 0-3.284 3.283c0 .258.025.508.084.75A9.324 9.324 0 0 1 1.125 1.75a3.291 3.291 0 0 0 1.016 4.384 3.268 3.268 0 0 1-1.483-.417v.042a3.288 3.288 0 0 0 2.633 3.225 3.29 3.29 0 0 1-.866.117 3.1 3.1 0 0 1-.617-.059 3.29 3.29 0 0 0 3.067 2.284 6.593 6.593 0 0 1-4.084 1.408c-.266 0-.525-.016-.783-.05a9.28 9.28 0 0 0 5.017 1.475"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.298.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.002Zm0 1.44c2.137 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.486-.276a2.478 2.478 0 0 1-.919-.598 2.48 2.48 0 0 1-.599-.919c-.11-.281-.24-.705-.275-1.485-.038-.843-.047-1.096-.047-3.232s.009-2.388.047-3.231c.036-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002Zm0 2.452a4.108 4.108 0 1 0 0 8.215 4.108 4.108 0 0 0 0-8.215Zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334Zm5.273-5.787a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0Z"/></svg></a>
+                        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.82 0H1.18A1.169 1.169 0 0 0 0 1.154v13.694A1.168 1.168 0 0 0 1.18 16h13.64A1.17 1.17 0 0 0 16 14.845V1.15A1.171 1.171 0 0 0 14.82 0ZM4.744 13.64H2.369V6h2.375v7.64Zm-1.187-8.683a1.376 1.376 0 1 1 .005-2.753 1.376 1.376 0 0 1-.005 2.753ZM13.64 13.64h-2.375V9.922c0-.887-.015-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.784H6.23V6h2.28v1.045h.032c.317-.6.109 1.028 2.032 1.028 2.172 0 2.574 1.43 2.574 3.29v4.275Z"/></svg></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-in-section">
+        <div class="logos-wrapper">
+        <img src="img/home/logo/logo1.png" alt="Logo 1">
+        <img src="img/home/logo/logo2.png" alt="Logo 2">
+        <img src="img/home/logo/logo3.png" alt="Logo 3">
+        <img src="img/home/logo/logo4.png" alt="Logo 4">
+        <img src="img/home/logo/logo5.png" alt="Logo 5">
+        <img src="img/home/logo/logo6.png" alt="Logo 6">
+        </div>
+    </section>
+<section class="testimonials-section">
+    <div class="testimonials-left">
+      <div class="testimonials-subtitle">Testimonials</div>
+      <h2 class="testimonials-title">What people say about our blog</h2>
+      <p class="testimonials-desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+      </p>
+    </div>
+
+    <div class="testimonials-divider"></div>
+
+    <div class="testimonials-right">
+      <h4 class="testimonial-quote">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </h4>
+
+      <div class="testimonial-footer">
+        <div class="testimonial-author">
+          <img src="img/home/jonathan-vallem.png" alt="Jonathan Vallem" class="author-avatar">
+          <div class="author-info">
+            <h4 class="author-name">Jonathan Vallem</h4>
+            <p class="author-location">New york, USA</p>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <button class="nav-btn nav-btn-left" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#232536" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="nav-btn nav-btn-right" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Join team  -->
+    <section class="join-section">
+        <div class="join-container" style="margin-bottom: 40px;">
+            <h2 class="heading-h2" style="margin-bottom: 16px;">Join our team to be a part<br>of our story</h2>
+            <p class="body-01 text-dark-gray" style="margin-bottom: 32px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn btn-primary">Join Now</a>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#" class="footer-logo"><span>{</span>Finsweet</a>
+
+                <ul class="footer-nav body-01">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <div class="subscribe-box">
+                    <div class="subscribe-inner">
+                        <h3 class="subscribe-title heading-h4">
+                            Subscribe to our news letter to get latest updates and news
+                        </h3>
+
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="Enter Your Email" class="subscribe-input" />
+                            <button type="submit" class="subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact body-02">
+                    <div>Finstreet 118 2561 Fintown</div>
+                    <div>Hello@finsweet.com  020 7993 2905</div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 11.993 2.92547 15.3027 6.75 15.9028V10.3125H4.71875V8H6.75V6.2375C6.75 4.2325 7.94438 3.125 9.77172 3.125C10.6467 3.125 11.5625 3.28125 11.5625 3.28125V5.25H10.5538C9.56 5.25 9.25 5.86672 9.25 6.5V8H11.4688L11.1141 10.3125H9.25V15.9028C13.0745 15.3027 16 11.993 16 8Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.03344 13.0005C11.0697 13.0005 14.3722 7.99829 14.3722 3.66173C14.3722 3.5211 14.3691 3.37735 14.3628 3.23673C15.0052 2.77213 15.5597 2.19666 16 1.53735C15.4017 1.80356 14.7664 1.97741 14.1159 2.05298C14.8009 1.64243 15.3137 0.99747 15.5594 0.237666C14.915 0.619527 14.2104 0.888896 13.4756 1.03423C12.9806 0.508196 12.326 0.159899 11.6131 0.043189C10.9003 -0.0735213 10.1688 0.0478552 9.53183 0.388553C8.89486 0.72925 8.38787 1.27029 8.08923 1.92803C7.7906 2.58577 7.71695 3.32357 7.87969 4.02735C6.575 3.96188 5.29862 3.62296 4.13332 3.03255C2.96802 2.44215 1.9398 1.61345 1.11531 0.600166C0.696266 1.32265 0.568038 2.17759 0.756687 2.99122C0.945337 3.80485 1.43671 4.51612 2.13094 4.98048C1.60975 4.96393 1.09998 4.82361 0.64375 4.5711V4.61173C0.643283 5.36992 0.905399 6.10488 1.38554 6.69167C1.86568 7.27846 2.53422 7.68086 3.2775 7.83048C2.7947 7.96257 2.28799 7.98182 1.79656 7.88673C2.0063 8.53878 2.41438 9.10908 2.96385 9.51804C3.51331 9.92701 4.17675 10.1542 4.86156 10.168C3.69895 11.0812 2.26278 11.5766 0.784375 11.5742C0.522191 11.5738 0.260266 11.5578 0 11.5261C1.5019 12.4897 3.24902 13.0014 5.03344 13.0005Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1.44062C10.1375 1.44062 10.3906 1.45 11.2313 1.4875C12.0125 1.52187 12.4344 1.65313 12.7156 1.7625C13.0875 1.90625 13.3563 2.08125 13.6344 2.35938C13.9156 2.64062 14.0875 2.90625 14.2313 3.27813C14.3406 3.55938 14.4719 3.98438 14.5063 4.7625C14.5438 5.60625 14.5531 5.85938 14.5531 7.99375C14.5531 10.1313 14.5438 10.3844 14.5063 11.225C14.4719 12.0063 14.3406 12.4281 14.2313 12.7094C14.0875 13.0813 13.9125 13.35 13.6344 13.6281C13.3531 13.9094 13.0875 14.0813 12.7156 14.225C12.4344 14.3344 12.0094 14.4656 11.2313 14.5C10.3875 14.5375 10.1344 14.5469 8 14.5469C5.8625 14.5469 5.60938 14.5375 4.76875 14.5C3.9875 14.4656 3.56563 14.3344 3.28438 14.225C2.9125 14.0813 2.64375 13.9063 2.36563 13.6281C2.08438 13.3469 1.9125 13.0813 1.76875 12.7094C1.65938 12.4281 1.52813 12.0031 1.49375 11.225C1.45625 10.3813 1.44688 10.1281 1.44688 7.99375C1.44688 5.85625 1.45625 5.60313 1.49375 4.7625C1.52813 3.98125 1.65938 3.55938 1.76875 3.27813C1.9125 2.90625 2.0875 2.6375 2.36563 2.35938C2.64688 2.07812 2.9125 1.90625 3.28438 1.7625C3.56563 1.65313 3.99063 1.52187 4.76875 1.4875C5.60938 1.45 5.8625 1.44062 8 1.44062ZM8 0C5.82813 0 5.55625 0.009375 4.70313 0.046875C3.85313 0.084375 3.26875 0.221875 2.7625 0.41875C2.23438 0.625 1.7875 0.896875 1.34375 1.34375C0.896875 1.7875 0.625 2.23438 0.41875 2.75938C0.221875 3.26875 0.084375 3.85 0.046875 4.7C0.009375 5.55625 0 5.82812 0 8C0 10.1719 0.009375 10.4438 0.046875 11.2969C0.084375 12.1469 0.221875 12.7313 0.41875 13.2375C0.625 13.7656 0.896875 14.2125 1.34375 14.6562C1.7875 15.1 2.23438 15.375 2.75938 15.5781C3.26875 15.775 3.85 15.9125 4.7 15.95C5.55313 15.9875 5.825 15.9969 7.99688 15.9969C10.1688 15.9969 10.4406 15.9875 11.2938 15.95C12.1438 15.9125 12.7281 15.775 13.2344 15.5781C13.7594 15.375 14.2063 15.1 14.65 14.6562C15.0938 14.2125 15.3688 13.7656 15.5719 13.2406C15.7688 12.7313 15.9063 12.15 15.9438 11.3C15.9813 10.4469 15.9906 10.175 15.9906 8.00313C15.9906 5.83125 15.9813 5.55938 15.9438 4.70625C15.9063 3.85625 15.7688 3.27188 15.5719 2.76562C15.375 2.23438 15.1031 1.7875 14.6563 1.34375C14.2125 0.9 13.7656 0.625 13.2406 0.421875C12.7313 0.225 12.15 0.0875 11.3 0.05C10.4438 0.009375 10.1719 0 8 0Z" fill="currentColor"/>
+                            <path d="M8 3.89062C5.73125 3.89062 3.89062 5.73125 3.89062 8C3.89062 10.2688 5.73125 12.1094 8 12.1094C10.2688 12.1094 12.1094 10.2688 12.1094 8C12.1094 5.73125 10.2688 3.89062 8 3.89062ZM8 10.6656C6.52813 10.6656 5.33437 9.47188 5.33437 8C5.33437 6.52813 6.52813 5.33437 8 5.33437C9.47188 5.33437 10.6656 6.52813 10.6656 8C10.6656 9.47188 9.47188 10.6656 8 10.6656Z" fill="currentColor"/>
+                            <path d="M13.2312 3.72793C13.2312 4.25918 12.8 4.68731 12.2719 4.68731C11.7406 4.68731 11.3125 4.25606 11.3125 3.72793C11.3125 3.19668 11.7438 2.76855 12.2719 2.76855C12.8 2.76855 13.2312 3.19981 13.2312 3.72793Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.8156 0H1.18125C0.528125 0 0 0.515625 0 1.15313V14.8438C0 15.4813 0.528125 16 1.18125 16H14.8156C15.4688 16 16 15.4813 16 14.8469V1.15313C16 0.515625 15.4688 0 14.8156 0ZM4.74687 13.6344H2.37188V5.99687H4.74687V13.6344ZM3.55938 4.95625C2.79688 4.95625 2.18125 4.34062 2.18125 3.58125C2.18125 2.82188 2.79688 2.20625 3.55938 2.20625C4.31875 2.20625 4.93437 2.82188 4.93437 3.58125C4.93437 4.3375 4.31875 4.95625 3.55938 4.95625ZM13.6344 13.6344H11.2625V9.92188C11.2625 9.0375 11.2469 7.89687 10.0281 7.89687C8.79375 7.89687 8.60625 8.8625 8.60625 9.85938V13.6344H6.2375V5.99687H8.5125V7.04063H8.54375C8.85938 6.44063 9.63438 5.80625 10.7875 5.80625C13.1906 5.80625 13.6344 7.3875 13.6344 9.44375V13.6344Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
