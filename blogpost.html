@@ -6,6 +6,135 @@
     <title>Blog post</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+
+         .site-header {
+            background-color: var(--color-primary);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+            position: relative;
+            width: 100%;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 32px;
+            color: #FFFFFF;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        .btn-subscribe {
+            background-color: #FFFFFF;
+            color: var(--color-primary);
+            padding: 16px 48px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            white-space: nowrap;
+            border-radius: 4px; 
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+        /* адаптив хедера  */
+        @media (max-width: 1024px) {
+            .site-header {
+                padding: 0 40px;
+            }
+            .nav-menu {
+                gap: 24px;
+            }
+            .btn-subscribe {
+                padding: 14px 36px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0 20px;
+                height: auto;
+                min-height: 80px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+                gap: 16px;
+                justify-content: center;
+            }
+
+            .nav-menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .btn-subscribe {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .btn-subscribe {
+                padding: 12px 24px;
+                width: auto;
+            }
+        }
+
         body { margin: 0; background: #fff; color: #232536; font-family: 'Inter', sans-serif; }
         .blog-single { max-width: 843px; margin: 0 auto; padding: 140px 20px 180px; }
 
@@ -369,6 +498,20 @@
     </style>
 </head>
 <body>
+    <!--header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">{Finsweet</a>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="#" class="nav-link">Contact us</a>
+                <a href="#" class="btn-subscribe">Subscribe</a>
+            </nav>
+        </div>
+    </header>
     <article class="blog-single">
         <div class="post-meta">
             <div class="avatar-wrapper">
