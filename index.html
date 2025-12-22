@@ -1,75 +1,114 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>candy</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>index</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th:first-child, td:first-child {
+            width: 40px;
+            text-align: center;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .stats {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .stats img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<style>
-.candy {
-padding: 3%;
-border-radius:50%;
-background-color: pink;
-}
-</style>
 <body>
-    <div align="center" class="candy">                                                                                      
-<b><pre><code>                                                                                          
-                                                                      .##:....                      
-                                                                      .####+####.                   
-                                                                      .###*####*###..               
-                                                                      .#=####=##===++#.             
-                                                                      +##-+--.-#####*##.            
-                                                                      *#####*:###.+######.          
-                                                                      #:-###*=*##=##.#####.         
-                                                                      #**%##*==*#*#+##.#+##.        
-                                                                      #-#-#=*.*:##=:###-####        
-                                                                      #:%*.####--=#=##=#:+##=.      
-                                                                      .*+=%%=.##++:#+:##=#####.     
-                                                      ...*.           .@#*=++*###-=-++:+#*#*#..     
-                                                    +@@@@@%+@@%@=@#+..-%@%%*##*#*#########.         
-                                                 .::@@@@@@@%#*+@@@=@@+@@@%@####*#*####:.            
-                                               ..*.*#:-@@@@@@@+%@@@%@@@@@. ....-.....               
-                                             .*:.:**#....@@@@@@@@@*@@@@@.                           
-                                           .*::+.****.*....#@@@@@@@@@%@@@                           
-                                         .*::*********....#....@@@@%%#@**                           
-                                      ....*....******+....#...+*+%@@@@-*+.                          
-                                    ..:...=:..***.***.....#.*...=..@%%%=#.                          
-                                   .:......*****.***......#=...##...%%%=%.                          
-                                ..-......#::=******.*.....=..+###:.#%%%%.                           
-                               ..........=+*******#:...+...:#####.#.%%%@.                           
-                             ..........**+**.-**+..=.-...-#######.#.#%.                             
-                          ........ЗА РЕЗУЛЬТАТИВНОЕ ОКОНЧАНИЕ.+###.:##..                              
-                         .:...:********РАБОЧЕЙ НЕДЕЛИ::**:####:..*#+-...                           
-                      ..@##@@@....-#*******+**.-...::::+#####:..-#%%##*##+.                         
-                     .@#@*#@@%@@.......--.....=.:::::*#####....%%%##**#####%%##....                 
-                     .=@@@@@@@@@*%%.......**:..+:::.##:##..*.%%%%##*++*##*++*####%#..               
-                     .@@=@@@@@@%@%@@@:....-..:::::*#::#*.:####++=+*########**+%#%=+%*               
-                      #@@%@@@@%@@#*#*@+*.--+=:::#***##*..@*++-:::===+*+###%%%-+---=#%               
-                      .@@@*=-@.@@@@.=.%@@.::::##**###=:@@%%##%##*++++*#%%:==+-#=+-=*%               
-                      .*@@@#@@@@@@@@%.@@@@:+###**##.=%%%%######%###*%%=-=*+*==-=--==%               
-                      ..@@@@@@@@@@@@@@+%@%#****.#:-%%%%%##%###%%##%%%-==-==*-====--:%               
-                        =@@%@@@%@@@@#@@*@%%....:#%%%%%%#########%###%-++=+-=+++*==-=%               
-                        *@@-%%@@@@@@@@%%%%%...:..%%%%%#############*#+-+=++=-:-+==+%*               
-          . .#+=:%@@@@@%##@@@@@@@@@@@@*%%%#%..    ...##############*#==**-*-++*::%%..               
-        .=#@%@@@@%@+@@%@@%%.   .@@@-*#.-%#.           ..#########%#%#+-*=+*-:-#%.                   
-    .*@@@@@@@@-+*@@@-##=@@@@.      .                     ...#########=*+=+*%..                      
-    .*@@%@@@@@@@@@.@@@@@+@@@@ .                             ...*##%%%-=%%...                        
-     .=@@@@@@@@@@@@@%@:#%@@@%@.                                  ..##.                              
-     .#%@@@@@@@@%@@**:@@%=@%@@.                                                                     
-      .*@@=@@@*@@@@*%=-@@@@@+@*                                                                     
-       .@@@@@@@@@@@@@=+@@@#*@@*                                                                     
-         @@@@@@@@@@*####@#@@@@-.                                                                    
-          *@:@@@@@@+@@:@@@@@%+#.                                                                    
-           .@##@@@@@@@@@@@@@%@#                                                                     
-            .-@@@@@@@%@@@@@@@#.                                                                     
-              ...:..+@@@@@@%#.                                                                      
-                         .@##                                                                       
-                          .@                                                                        
-                                                                   
-                          </code></pre></b>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Страница</th>
+            <th>Contributors (от бо́льшего импакта к меньшему)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><a href="https://tvivlad2.github.io/team_1/aboutus.html">aboutus.html</a></td>
+            <td>Аккужина Фанзиля, Ханнанов Фаяз, Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://tvivlad2.github.io/team_1/author.html">author.html</a></td>
+            <td>Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://tvivlad2.github.io/team_1/blog.html">blog.html</a></td>
+            <td>Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="https://tvivlad2.github.io/team_1/blogpost.html">blogpost.html</a></td>
+            <td>Ханнанов Фаяз, Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="https://tvivlad2.github.io/team_1/category.html">category.html</a></td>
+            <td>Ханнанов Фаяз, Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="https://tvivlad2.github.io/team_1/contact.html">contact.html</a></td>
+            <td>Аккужина Фанзиля</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="https://tvivlad2.github.io/team_1/home.html">home.html</a></td>
+            <td>Ханнанов Фаяз, Бобров Максим</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><a href="https://tvivlad2.github.io/team_1/index.html">index.html</a></td>
+            <td><-- Вы здесь --></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><a href="https://tvivlad2.github.io/team_1/privacypolicy.html">privacypolicy.html</a></td>
+            <td>Бобров Максим</td>
+        </tr>
+    </table>
+    <p style="text-align: center;"> Поэлементные благодарности: <br>
+      Ханнанов Фаяз — footer, header
+    </p>
+    <div class="stats">
+      <a href="https://github.com/tvivlad2/team_1/graphs/contributors">
+        <img src="success.png" alt="github stats">
+      </a>
     </div>
-</body>                                                                           
+</body>
 </html>
